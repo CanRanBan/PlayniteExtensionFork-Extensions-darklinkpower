@@ -96,7 +96,12 @@ namespace PlayState
             {
                 return;
             }
-            
+
+            if ((playniteApi.ApplicationInfo.Mode == ApplicationMode.Desktop) && (status == NotificationTypes.DataAdded))
+            {
+                return;
+            }
+
             var sb = new StringBuilder();
             var canAddCurrentPlaytimeLine = true;
             switch (status)
