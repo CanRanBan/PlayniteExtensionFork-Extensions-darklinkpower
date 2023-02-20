@@ -1,16 +1,20 @@
 Id: SpecialKHelper_71349310-9ed8-4bf5-8bf2-e92cdb222748
 Name: Special K Helper
 Author: darklinkpower
-Version: 1.24
+Version: 1.25
 Module: SpecialKHelper.dll
 Type: GenericPlugin
 Icon: icon.png
 Links:
     - Name: GitHub
       Url: https://github.com/darklinkpower/PlayniteExtensionsCollection
-    - Name: Playnite Forums thread
-      Url: https://playnite.link/forum/thread-1162.html
-    - Name: Wiki
+    - Name: Help and Troubleshooting
       Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/Special-K-Helper
+    - Name: Issues Tracker
+      Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/issues?q=is%3Aopen+is%3Aissue+label%3ASpecialKHelper
+    - Name: Support (Discord)
+      Url: https://discord.com/channels/365863063296933888/808419165311467630
     - Name: Translate
       Url: https://crowdin.com/project/darklinkpower-playnite-extensi
+    - Name: Ko-fi (Tips and Donations)
+      Url: https://ko-fi.com/darklinkpower

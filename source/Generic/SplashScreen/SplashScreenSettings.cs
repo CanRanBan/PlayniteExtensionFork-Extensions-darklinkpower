@@ -1,6 +1,7 @@
 ﻿using Playnite.SDK;
 using Playnite.SDK.Data;
 using PluginsCommon;
+using SplashScreen.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,22 +14,6 @@ namespace SplashScreen
 {
     public class SplashScreenSettings : ObservableObject
     {
-        public bool ExecuteInDesktopMode { get; set; } = true;
-        public bool ViewImageSplashscreenDesktopMode { get; set; } = true;
-        public bool ViewVideoDesktopMode { get; set; } = true;
-        public bool CloseSplashScreenDesktopMode { get; set; } = true;
-        public bool ExecuteInFullscreenMode { get; set; } = true;
-        public bool ViewImageSplashscreenFullscreenMode { get; set; } = true;
-        public bool ViewVideoFullscreenMode { get; set; } = true;
-        public bool CloseSplashScreenFullscreenMode { get; set; } = true;
-        public bool ShowLogoInSplashscreen { get; set; } = true;
-        public bool UseIconAsLogo { get; set; } = false;
-        public HorizontalAlignment LogoHorizontalAlignment { get; set; } = HorizontalAlignment.Left;
-        public VerticalAlignment LogoVerticalAlignment { get; set; } = VerticalAlignment.Bottom;
-        public bool UseBlackSplashscreen { get; set; } = false;
-        public bool UseGlobalSplashImage { get; set; } = false;
-        public string GlobalSplashFile { get; set; } = string.Empty;
-        public bool UseLogoInGlobalSplashImage { get; set; } = false;
         [DontSerialize]
         private string globalSplashImagePath { get; set; }
         [DontSerialize]
@@ -38,28 +23,6 @@ namespace SplashScreen
             set
             {
                 globalSplashImagePath = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private bool splashImageUseFadeInAnimation { get; set; } = true;
-        public bool SplashImageUseFadeInAnimation
-        {
-            get => splashImageUseFadeInAnimation;
-            set
-            {
-                splashImageUseFadeInAnimation = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private bool splashLogoUseFadeInAnimation { get; set; } = false;
-        public bool SplashLogoUseFadeInAnimation
-        {
-            get => splashLogoUseFadeInAnimation;
-            set
-            {
-                splashLogoUseFadeInAnimation = value;
                 OnPropertyChanged();
             }
         }
@@ -80,6 +43,7 @@ namespace SplashScreen
             { VerticalAlignment.Bottom, ResourceProvider.GetString("LOCSplashScreen_SettingVerticalAlignmentBottomLabel") },
         };
 
+        public GeneralSplashSettings GeneralSplashSettings { get; set; } = new GeneralSplashSettings();
     }
 
     public class SplashScreenSettingsViewModel : ObservableObject, ISettings
@@ -127,13 +91,13 @@ namespace SplashScreen
 
         private void SetGlobalSplashImagePath()
         {
-            if (string.IsNullOrEmpty(Settings.GlobalSplashFile))
+            if (Settings.GeneralSplashSettings.CustomBackgroundImage.IsNullOrEmpty())
             {
                 Settings.GlobalSplashImagePath = null;
                 return;
             }
 
-            var globalSplashImagePath = Path.Combine(pluginUserDataPath, Settings.GlobalSplashFile);
+            var globalSplashImagePath = Path.Combine(pluginUserDataPath, "CustomBackgrounds", Settings.GeneralSplashSettings.CustomBackgroundImage);
             if (FileSystem.FileExists(globalSplashImagePath))
             {
                 Settings.GlobalSplashImagePath = globalSplashImagePath;
@@ -178,14 +142,14 @@ namespace SplashScreen
             get => new RelayCommand(() =>
             {
                 var filePath = playniteApi.Dialogs.SelectImagefile();
-                if (!string.IsNullOrEmpty(filePath) && RemoveGlobalImage())
+                if (!filePath.IsNullOrEmpty() && RemoveGlobalImage())
                 {
-                    var fileName = Path.GetFileName(filePath);
-                    var globalSplashImagePath = Path.Combine(pluginUserDataPath, fileName);
+                    var fileName = Guid.NewGuid() + Path.GetExtension(filePath);
+                    var globalSplashImagePath = Path.Combine(pluginUserDataPath, "CustomBackgrounds", fileName);
                     try
                     {
                         FileSystem.CopyFile(filePath, globalSplashImagePath);
-                        Settings.GlobalSplashFile = Path.GetFileName(filePath);
+                        Settings.GeneralSplashSettings.CustomBackgroundImage = Path.GetFileName(filePath);
                         SetGlobalSplashImagePath();
                     }
                     catch (Exception e)
@@ -206,15 +170,15 @@ namespace SplashScreen
 
         private bool RemoveGlobalImage()
         {
-            if (Settings.GlobalSplashFile.IsNullOrEmpty())
+            if (Settings.GeneralSplashSettings.CustomBackgroundImage.IsNullOrEmpty())
             {
                 return true;
             }
 
-            var globalSplashImagePath = Path.Combine(pluginUserDataPath, Settings.GlobalSplashFile);
+            var globalSplashImagePath = Path.Combine(pluginUserDataPath, "CustomBackgrounds", Settings.GeneralSplashSettings.CustomBackgroundImage);
             FileSystem.DeleteFileSafe(globalSplashImagePath);
 
-            Settings.GlobalSplashFile = null;
+            Settings.GeneralSplashSettings.CustomBackgroundImage = null;
             SetGlobalSplashImagePath();
             return true;
         }
