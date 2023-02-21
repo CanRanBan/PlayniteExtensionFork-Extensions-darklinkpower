@@ -214,4 +214,7 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)Localization\*.xaml" "$(TargetDir)\Localization" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="('$(Configuration)' == 'ReleasePack') AND ('$(Playnite_Toolbox_Dir)' != '') AND ('$(Playnite_Toolbox_TargetDir)' != '')">
+    <Exec Command="%22$(Playnite_Toolbox_Dir)\Toolbox.exe%22 pack %22$(TargetDir.TrimEnd('\'))%22 %22$(Playnite_Toolbox_TargetDir)%22" />
+  </Target>
 </Project>
