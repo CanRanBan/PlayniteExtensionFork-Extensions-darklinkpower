@@ -146,15 +146,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="app.xaml">
+    <None Include="Localization\*.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+	<Page Include="app.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="JastUsaLibrarySettingsView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Localization\en_US.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -189,9 +190,6 @@
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)Localization\*.xaml" "$(TargetDir)\Localization" /Y /I /E</PostBuildEvent>
-  </PropertyGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="('$(Configuration)' == 'ReleasePack') AND ('$(Playnite_Toolbox_Dir)' != '') AND ('$(Playnite_Toolbox_TargetDir)' != '')">
     <Exec Command="%22$(Playnite_Toolbox_Dir)\Toolbox.exe%22 pack %22$(TargetDir.TrimEnd('\'))%22 %22$(Playnite_Toolbox_TargetDir)%22" />
   </Target>
