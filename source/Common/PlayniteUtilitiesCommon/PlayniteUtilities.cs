@@ -4,8 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PlayniteUtilitiesCommon
 {
@@ -24,7 +22,7 @@ namespace PlayniteUtilitiesCommon
             {
                 return false;
             }
-            
+
             if (ignoreOrdinalCase)
             {
                 return game.Features.Any(x => x.Name.Equals(featureName, StringComparison.OrdinalIgnoreCase));
@@ -64,13 +62,13 @@ namespace PlayniteUtilitiesCommon
             var addedCount = 0;
 
             using (PlayniteApi.Database.BufferedUpdate())
-            foreach (var game in games)
-            {
-                if (AddFeatureToGame(PlayniteApi, game, feature))
+                foreach (var game in games)
                 {
-                    addedCount++;
+                    if (AddFeatureToGame(PlayniteApi, game, feature))
+                    {
+                        addedCount++;
+                    }
                 }
-            }
 
             return addedCount;
         }
@@ -80,13 +78,13 @@ namespace PlayniteUtilitiesCommon
             var removedCount = 0;
 
             using (PlayniteApi.Database.BufferedUpdate())
-            foreach (var game in games)
-            {
-                if (RemoveFeatureFromGame(PlayniteApi, game, featureName))
+                foreach (var game in games)
                 {
-                    removedCount++;
+                    if (RemoveFeatureFromGame(PlayniteApi, game, featureName))
+                    {
+                        removedCount++;
+                    }
                 }
-            }
 
             return removedCount;
         }
@@ -160,13 +158,13 @@ namespace PlayniteUtilitiesCommon
             var addedCount = 0;
 
             using (PlayniteApi.Database.BufferedUpdate())
-            foreach (var game in games)
-            {
-                if (AddTagToGame(PlayniteApi, game, tag))
+                foreach (var game in games)
                 {
-                    addedCount++;
+                    if (AddTagToGame(PlayniteApi, game, tag))
+                    {
+                        addedCount++;
+                    }
                 }
-            }
 
             return addedCount;
         }
@@ -176,13 +174,13 @@ namespace PlayniteUtilitiesCommon
             var removedCount = 0;
 
             using (PlayniteApi.Database.BufferedUpdate())
-            foreach (var game in games)
-            {
-                if (RemoveTagFromGame(PlayniteApi, game, tagName))
+                foreach (var game in games)
                 {
-                    removedCount++;
+                    if (RemoveTagFromGame(PlayniteApi, game, tagName))
+                    {
+                        removedCount++;
+                    }
                 }
-            }
 
             return removedCount;
         }
@@ -265,7 +263,7 @@ namespace PlayniteUtilitiesCommon
 
             var startIndex = prefixRemoveEndIndex + prefixEnd.Length;
             var lenght = suffixRemoveStartIndex - startIndex;
-            if (pageSource[startIndex] != '{' || pageSource[startIndex + lenght -1] != '}')
+            if (pageSource[startIndex] != '{' || pageSource[startIndex + lenght - 1] != '}')
             {
                 return null;
             }

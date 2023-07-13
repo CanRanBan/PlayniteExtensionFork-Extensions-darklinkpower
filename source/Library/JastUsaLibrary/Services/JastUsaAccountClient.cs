@@ -1,18 +1,14 @@
 ﻿using JastUsaLibrary.Models;
 using Playnite.SDK;
 using Playnite.SDK.Data;
-using Playnite.SDK.Models;
 using PluginsCommon;
-using WebCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Security.Principal;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media;
-using System.Net.Http;
+using WebCommon;
 
 namespace JastUsaLibrary.Services
 {
@@ -153,7 +149,7 @@ namespace JastUsaLibrary.Services
                 ["Authorization"] = "Bearer " + authenticationToken.Token.UrlDecode(),
                 ["Accept-Encoding"] = "utf-8"
             };
-            
+
             var translationsUrl = string.Format(@"https://app.jastusa.com/api/v2/shop/account/game-translations/{0}", translationId);
             var downloadStringResult = HttpDownloader.DownloadStringWithHeaders(translationsUrl, headers);
             if (!downloadStringResult.Success)

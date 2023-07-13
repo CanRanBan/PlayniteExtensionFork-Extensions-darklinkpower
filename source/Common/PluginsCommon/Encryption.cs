@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PluginsCommon
 {
@@ -16,7 +12,7 @@ namespace PluginsCommon
         // For security reasons, the class will add a secret value to the passwords provided to the methods
         // The class secret is changed to a private one during build to increase security
         private const string secret = "PublicSecret";
-        
+
         public static byte[] GenerateRandomSalt()
         {
             byte[] data = new byte[32];

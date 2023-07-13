@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0"?>
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="LOCPlayState_SettingsHelpLabel">Справка</sys:String>
     <sys:String x:Key="LOCPlayState_MenuItemAddToBlacklistDescription">Добавить выбранные игры в список исключений</sys:String>
     <sys:String x:Key="LOCPlayState_MenuItemRemoveFromBlacklistDescription">Убрать выбранные игры из списка исключений</sys:String>

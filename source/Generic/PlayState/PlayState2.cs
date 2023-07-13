@@ -10,7 +10,6 @@ using PluginsCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -20,7 +19,7 @@ namespace PlayState
     {
         private const int HOTKEY_ID = 3754;
 
-        
+
         private bool IsAnyControllerConnected()
         {
             for (int i = 0; i <= 3; i++)
@@ -35,7 +34,7 @@ namespace PlayState
 
             return false;
         }
-        
+
         private void CheckControllers()
         {
             var maxCheckIndex = Settings.Settings.GamePadHotkeysEnableAllControllers ? 3 : 0;

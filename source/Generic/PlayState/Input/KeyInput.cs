@@ -3,10 +3,6 @@ using PlayState.Models;
 using PlayState.Native;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using static PlayState.Native.Winuser;
 
@@ -45,7 +41,7 @@ namespace PlayState.Input
             if (modifiers.HasFlag(ModifierKeys.Control))
             {
                 keys.Add(Key.LeftCtrl);
-            } 
+            }
             if (modifiers.HasFlag(ModifierKeys.Alt))
             {
                 keys.Add(Key.LeftAlt);
@@ -76,5 +72,5 @@ namespace PlayState.Input
             }
         }
     }
-    
+
 }

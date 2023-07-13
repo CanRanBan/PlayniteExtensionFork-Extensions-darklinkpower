@@ -6,9 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SteamCommon
 {
@@ -71,7 +69,7 @@ namespace SteamCommon
             StartSteam(restartIfRunning, argumentsList.Aggregate((x, b) => x + " " + b));
         }
 
-       public static void StartSteam(bool restartIfRunning, string arguments = "")
+        public static void StartSteam(bool restartIfRunning, string arguments = "")
         {
             string steamInstallationPath = GetSteamInstallationPath();
             if (!FileSystem.FileExists(steamInstallationPath))

@@ -4,14 +4,9 @@ using PlayState.Enums;
 using PlayState.Models;
 using PlayState.XInputDotNetPure;
 using PluginsCommon;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace PlayState
@@ -155,7 +150,7 @@ namespace PlayState
                 OnPropertyChanged();
             }
         }
-        
+
         private GamePadStateHotkey gamePadInformationHotkeyClone;
         public GamePadStateHotkey GamePadInformationHotkeyClone
         {
@@ -408,7 +403,7 @@ namespace PlayState
             countDownTimer.Stop();
             countDownTimer.Start();
         }
-        
+
         private void UpdateCountdownText(int secondsLeft)
         {
             if (secondsLeft > 0)

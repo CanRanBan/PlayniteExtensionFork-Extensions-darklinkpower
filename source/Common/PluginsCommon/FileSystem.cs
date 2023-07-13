@@ -1,7 +1,5 @@
 ﻿using Playnite.SDK;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -415,13 +413,13 @@ namespace PluginsCommon
             return new FileInfo(path).Length;
         }
 
-        
+
         public static long GetFileSizeOnDisk(string path)
         {
             return GetFileSizeOnDisk(new FileInfo(FixPathLength(path)));
         }
 
-        
+
         public static long GetFileSizeOnDisk(FileInfo info)
         {
             // From https://stackoverflow.com/a/3751135

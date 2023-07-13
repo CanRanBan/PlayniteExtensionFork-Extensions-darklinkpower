@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace PlayState.ViewModels
 {
-    class SplashWindowViewModel: ObservableObject
+    class SplashWindowViewModel : ObservableObject
     {
 
         public string gameName { get; set; }

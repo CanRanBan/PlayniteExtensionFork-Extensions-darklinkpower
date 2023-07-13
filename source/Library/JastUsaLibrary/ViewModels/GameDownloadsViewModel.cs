@@ -3,17 +3,14 @@ using JastUsaLibrary.Services;
 using Playnite.SDK;
 using Playnite.SDK.Models;
 using PluginsCommon;
-using WebCommon;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
+using WebCommon;
 
 namespace JastUsaLibrary.ViewModels
 {
@@ -178,7 +175,7 @@ namespace JastUsaLibrary.ViewModels
 
                 var tickOldDate = DateTime.Now;
                 long tickoldBytesReceived = 0;
-                
+
                 void progressChangedAction(DownloadProgressChangedEventArgs e)
                 {
                     var tickNewDate = DateTime.Now;

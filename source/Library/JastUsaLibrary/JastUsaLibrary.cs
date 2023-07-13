@@ -1,4 +1,5 @@
 ﻿using JastUsaLibrary.Models;
+using JastUsaLibrary.ProgramsHelper.Models;
 using JastUsaLibrary.Services;
 using JastUsaLibrary.ViewModels;
 using JastUsaLibrary.Views;
@@ -11,12 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using JastUsaLibrary.ProgramsHelper.Models;
-using System.Reflection;
 
 namespace JastUsaLibrary
 {
@@ -273,7 +271,7 @@ namespace JastUsaLibrary
             {
                 ProcessStarter.StartProcess(Path.GetDirectoryName(gameCache.Program.Path));
             }
-            
+
             return new List<UninstallController> { new FakeUninstallController(game) };
         }
 

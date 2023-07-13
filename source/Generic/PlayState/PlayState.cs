@@ -2,26 +2,25 @@
 using Playnite.SDK.Events;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using PlayniteUtilitiesCommon;
+using PlayState.Controls;
+using PlayState.Enums;
 using PlayState.Models;
 using PlayState.ViewModels;
 using PlayState.Views;
+using PluginsCommon;
+using StartPage.SDK;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interop;
-using PluginsCommon;
-using PlayniteUtilitiesCommon;
-using System.Reflection;
 using System.Windows.Media;
-using StartPage.SDK;
-using PlayState.Controls;
-using System.Timers;
-using PlayState.Enums;
 
 namespace PlayState
 {
@@ -94,8 +93,8 @@ namespace PlayState
         public void SetSwitchModesOnControlCheck()
         {
             Task.Run(() =>
-            {                
-                
+            {
+
                 var switchModeControllerTimer = new Timer(2000)
                 {
                     AutoReset = true,
@@ -174,7 +173,8 @@ namespace PlayState
                         Text = "\u0041",
                         FontFamily = new FontFamily(new Uri(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources", "playstateiconfont.ttf")), "./#playstateiconfont")
                     },
-                    Opened = () => {
+                    Opened = () =>
+                    {
                         return new PlayStateManagerView { DataContext = playStateManager };
                     }
                 };
@@ -223,7 +223,7 @@ namespace PlayState
             {
                 return;
             }
-            
+
             InitializePlaytimeInfoFile(); // Temporary workaround for sharing PlayState paused time until Playnite allows to share data among extensions
 
             var game = args.Game;
@@ -447,7 +447,7 @@ namespace PlayState
 
         public void OnViewRemoved(string viewId, Guid instanceId)
         {
-            
+
         }
 
     }

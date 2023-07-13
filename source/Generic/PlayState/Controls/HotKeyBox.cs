@@ -1,14 +1,9 @@
 ﻿using Playnite.SDK;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PlayState.Models;
+using PluginsCommon;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using PlayState.Models;
-using PluginsCommon;
 
 namespace PlayState.Controls
 {

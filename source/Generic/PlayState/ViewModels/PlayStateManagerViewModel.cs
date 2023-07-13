@@ -1,6 +1,5 @@
 ﻿using Playnite.SDK;
 using Playnite.SDK.Models;
-using PlayState.Controls;
 using PlayState.Enums;
 using PlayState.Events;
 using PlayState.Models;
@@ -10,8 +9,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace PlayState.ViewModels
@@ -121,7 +118,7 @@ namespace PlayState.ViewModels
                     playstateData.HasBeenInForeground = true;
                 }
 
-                if (playstateData.IsGameStatusOverrided && 
+                if (playstateData.IsGameStatusOverrided &&
                     (isForeground && playstateData.GameStatusOverride == PlayStateAutomaticStateSwitchStatus.Enabled ||
                     !isForeground && playstateData.GameStatusOverride == PlayStateAutomaticStateSwitchStatus.Disabled))
                 {
@@ -318,7 +315,7 @@ namespace PlayState.ViewModels
 
         public RelayCommand SwitchGameStateCommand
         {
-            get => new RelayCommand (() =>
+            get => new RelayCommand(() =>
             {
                 if (SelectedData != null)
                 {
@@ -497,7 +494,7 @@ namespace PlayState.ViewModels
             {
                 return;
             }
-            
+
             var foregroundWindowHandle = WindowsHelper.GetForegroundWindowHandle();
 
             // Check if game window is already in foreground

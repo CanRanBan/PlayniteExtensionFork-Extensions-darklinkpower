@@ -1,10 +1,10 @@
 ﻿
+using PluginsCommon;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
-using PluginsCommon;
 
 namespace SteamCommon
 {
@@ -144,7 +144,7 @@ namespace SteamCommon
                     if (CloseItem > OpenItem)
                     {
                         return i;
-                    } 
+                    }
                 }
             }
             throw new Exception("Not enough closing characters!");
