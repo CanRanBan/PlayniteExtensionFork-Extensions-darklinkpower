@@ -60,14 +60,14 @@ namespace SteamCommon
                     var gameId = gameElem.GetAttribute("data-ds-appid");
 
                     // Prices Data
-                    var priceData = gameElem.QuerySelector(".search_price_discount_combined");
+                    var priceData = gameElem.QuerySelector(".search_discount_and_price");
                     var discountPercentage = GetSteamSearchDiscount(priceData);
                     var priceFinal = GetSteamSearchFinalPrice(priceData);
                     var priceOriginal = GetSearchOriginalPrice(priceFinal, discountPercentage);
                     var isDiscounted = priceFinal != priceOriginal && priceOriginal != 0;
-                    GetCurrencyFromSearchPriceDiv(gameElem.QuerySelector(".search_price"), out var currency, out var isReleased, out var isFree);
+                    GetCurrencyAndReleaseDateFromPriceData(priceData, out var currency, out var isReleased, out var isFree);
 
-                    //Urls
+                    // Urls
                     var storeUrl = gameElem.GetAttribute("href");
                     var capsuleUrl = gameElem.QuerySelector(".search_capsule").Children[0].GetAttribute("src");
 
@@ -93,42 +93,49 @@ namespace SteamCommon
             return results;
         }
 
-        private static void GetCurrencyFromSearchPriceDiv(AngleSharp.Dom.IElement element, out string currency, out bool isReleased, out bool isFree)
+        // Note: isFree will always be false right now - search result data does no longer provide this value
+        private static void GetCurrencyAndReleaseDateFromPriceData(AngleSharp.Dom.IElement priceData, out string currency, out bool isReleased, out bool isFree)
         {
-            if (element.ChildElementCount == 2)
-            {
-                // Discounted Item
-                isReleased = true;
-                currency = GetCurrencyFromPriceString(element.Children[0].Children[0].InnerHtml);
-                isFree = currency == null;
-            }
-            else if (!element.InnerHtml.IsNullOrWhiteSpace())
-            {
-                // Non discounted item
-                isReleased = true;
-                currency = GetCurrencyFromPriceString(element.InnerHtml);
-                isFree = currency == null;
-            }
-            else
-            {
-                // Unreleased
-                isReleased = false;
-                currency = null;
-                isFree = false;
-            }
+            // Unreleased or delisted
+            isReleased = false;
+            currency = null;
+            isFree = false;
 
-            return;
+            if (priceData.ChildElementCount > 0)
+            {
+                var searchDiscountBlock = priceData.QuerySelector(".search_discount_block");
+                if (searchDiscountBlock.ChildElementCount == 2)
+                {
+                    var pricesElement = searchDiscountBlock.QuerySelector(".discount_prices");
+
+                    // Discounted Item
+                    isReleased = true;
+                    currency = GetCurrencyFromDiscountBlock(pricesElement);
+                    isFree = currency == null;
+                }
+                else if (searchDiscountBlock.ChildElementCount == 1)
+                {
+                    var pricesElement = searchDiscountBlock.QuerySelector(".discount_prices");
+
+                    // Non discounted item
+                    isReleased = true;
+                    currency = GetCurrencyFromDiscountBlock(pricesElement);
+                    isFree = currency == null;
+                }
+            }
         }
 
-        private static string GetCurrencyFromPriceString(string priceString)
+        private static string GetCurrencyFromDiscountBlock(AngleSharp.Dom.IElement pricesElement)
         {
-            if (!Regex.IsMatch(priceString, @"\d"))
+            var finalPriceWithCurrency = pricesElement.QuerySelector(".discount_final_price").InnerHtml;
+
+            if (!Regex.IsMatch(finalPriceWithCurrency, @"\d"))
             {
                 // Game is free
                 return null;
             }
 
-            return Regex.Match(priceString, @"[^\s]+").Value;
+            return Regex.Match(finalPriceWithCurrency, @"[^\s]+").Value;
         }
 
         private static string GetStoreSearchUrl(string searchTerm, string steamApiCountry)
@@ -149,24 +156,33 @@ namespace SteamCommon
                 return priceFinal;
             }
 
-            return (100 * priceFinal) / (100 - discountPercentage);
+            return 100 * priceFinal / (100 - discountPercentage);
         }
 
         private static int GetSteamSearchDiscount(AngleSharp.Dom.IElement priceData)
         {
-            var searchDiscountQuery = priceData.QuerySelector(".search_discount");
-            if (searchDiscountQuery.ChildElementCount == 1)
+            if (priceData.ChildElementCount > 0)
             {
-                //TODO Improve parsing
-                return int.Parse(searchDiscountQuery.Children[0].TextContent.Replace("-", "").Replace("%", "").Trim());
+                var searchDiscountBlock = priceData.QuerySelector(".search_discount_block");
+                if (searchDiscountBlock.ChildElementCount == 2)
+                {
+                    return int.Parse(searchDiscountBlock.GetAttribute("data-discount"));
+                }
             }
-
             return 0;
         }
 
         private static double GetSteamSearchFinalPrice(AngleSharp.Dom.IElement priceData)
         {
-            return int.Parse(priceData.GetAttribute("data-price-final")) * 0.01;
+            if (priceData.ChildElementCount > 0)
+            {
+                var searchDiscountBlock = priceData.QuerySelector(".search_discount_block");
+                if (searchDiscountBlock.ChildElementCount > 0)
+                {
+                    return double.Parse(searchDiscountBlock.GetAttribute("data-price-final")) * 0.01;
+                }
+            }
+            return 0;
         }
 
         private const string steamAppDetailsMask = @"https://store.steampowered.com/api/appdetails?appids={0}";
