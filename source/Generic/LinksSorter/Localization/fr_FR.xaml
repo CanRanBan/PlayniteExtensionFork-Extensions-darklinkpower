@@ -1,6 +1,0 @@
-﻿<?xml version="1.0"?>
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="LOCLinks_Sorter_MenuItemFormatSelectedDescription">Trier les liens dans les jeux sélectionnés</sys:String>
-    <sys:String x:Key="LOCLinks_Sorter_MenuItemFormatAllDescription">Trier les liens dans tous les jeux</sys:String>
-    <sys:String x:Key="LOCLinks_Sorter_ResultsMessage">Tri des liens de {0} jeu(s)</sys:String>
-</ResourceDictionary>
