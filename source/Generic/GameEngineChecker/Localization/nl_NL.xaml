@@ -1,7 +1,0 @@
-﻿<?xml version="1.0"?>
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
-    <sys:String x:Key="LOCGame_Engine_Checker_MenuItemAddTagSelectedGamesDescription">Voeg spel-engine tag toe aan geselecteerde spel(len)</sys:String>
-    <sys:String x:Key="LOCGame_Engine_Checker_PcgwDownloadErrorMessage">Kon spel informatie van &quot;{0}&quot; niet downloaden van PCGW. Fout: {1}</sys:String>
-    <sys:String x:Key="LOCGame_Engine_Checker_ResultsMessage" xml:space="preserve">Voltooid. Engine tag toegevoegd aan {0} spel(len).</sys:String>
-    <sys:String x:Key="LOCGame_Engine_Checker_SteamAppListDownloadErrorMessage">Fout bij downloaden van Steam Applicatie lijst database. Error: {0}</sys:String>
-</ResourceDictionary>
