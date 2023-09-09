@@ -151,7 +151,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-	<Page Include="app.xaml">
+    <Page Include="app.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -183,7 +183,7 @@
       <Version>10.0.3</Version>
     </PackageReference>
     <PackageReference Include="PlayniteSDK">
-      <Version>6.2.2</Version>
+      <Version>6.6.0</Version>
     </PackageReference>
     <PackageReference Include="System.IO.Compression.ZipFile">
       <Version>4.3.0</Version>

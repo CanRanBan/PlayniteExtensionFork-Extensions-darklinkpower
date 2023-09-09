@@ -87,7 +87,7 @@ namespace JastUsaLibrary
 
             foreach (var jastProduct in jastProducts)
             {
-                if (!jastProduct.ProductVariant.Platforms.Any(x => x.Any(y => y.Value == "Windows")))
+                if (!jastProduct.ProductVariant.Platforms.Any(x => x.Any(y => y.Value == JastPlatform.Windows)))
                 {
                     continue;
                 }
@@ -96,8 +96,6 @@ namespace JastUsaLibrary
                 {
                     Name = jastProduct.ProductVariant.ProductName.RemoveTrademarks(),
                     GameId = jastProduct.ProductVariant.GameId.ToString(),
-                    BackgroundImage = new MetadataFile(string.Format(jastMediaUrlTemplate, jastProduct.ProductVariant.ProductImageBackground)),
-                    CoverImage = new MetadataFile(string.Format(jastMediaUrlTemplate, jastProduct.ProductVariant.ProductImage)),
                     Platforms = new HashSet<MetadataProperty> { new MetadataSpecProperty("pc_windows") },
                     Source = new MetadataNameProperty("JAST USA")
                 };
@@ -122,7 +120,7 @@ namespace JastUsaLibrary
             var removals = 0;
             foreach (var cacheItem in installCache.ToList())
             {
-                if (!FileSystem.FileExists(cacheItem.Program.Path) || PlayniteApi.Database.Games[cacheItem.Id] == null)
+                if (!FileSystem.FileExists(cacheItem.Program.Path) || PlayniteApi.Database.Games[cacheItem.Id] is null)
                 {
                     installCache.Remove(cacheItem);
                     removals++;
@@ -158,12 +156,12 @@ namespace JastUsaLibrary
 
         public override IEnumerable<GameMenuItem> GetGameMenuItems(GetGameMenuItemsArgs args)
         {
-            if (args.Games.Last().PluginId != Id)
+            var game = args.Games.Last();
+            if (game.PluginId != Id)
             {
                 return null;
             }
 
-            var game = args.Games.Last();
             return new List<GameMenuItem>
             {
                 new GameMenuItem
@@ -187,7 +185,7 @@ namespace JastUsaLibrary
             var game = args.Game;
             var gameInstallCache = GetGameInstallCache();
             var gameCache = gameInstallCache.FirstOrDefault(x => x.GameId == game.GameId);
-            if (gameCache == null)
+            if (gameCache is null)
             {
                 return null;
             }
@@ -258,7 +256,7 @@ namespace JastUsaLibrary
             var game = args.Game;
             var gameInstallCache = GetGameInstallCache();
             var gameCache = gameInstallCache.FirstOrDefault(x => x.GameId == game.GameId);
-            if (gameCache == null)
+            if (gameCache is null)
             {
                 return null;
             }
@@ -302,7 +300,7 @@ namespace JastUsaLibrary
 
         public Program SelectExecutable()
         {
-            var path = PlayniteApi.Dialogs.SelectFile("Executable (.exe,.bat,lnk)|*.exe;*.bat;*.lnk");
+            var path = PlayniteApi.Dialogs.SelectFile("Executable (.exe,.bat,.lnk)|*.exe;*.bat;*.lnk");
             if (path.IsNullOrEmpty())
             {
                 return null;
@@ -342,7 +340,8 @@ namespace JastUsaLibrary
             }
 
             var authenticationToken = AccountClient.GetAuthenticationToken();
-            if (authenticationToken == null) // User is not logged in
+            PlayniteApi.Notifications.Remove("JastNotLoggedIn");
+            if (authenticationToken is null) // User is not logged in
             {
                 PlayniteApi.Notifications.Add(new NotificationMessage("JastNotLoggedIn", "JAST USA Library: " + ResourceProvider.GetString("LOCJast_Usa_Library_DialogMessageNotAuthenticated"), NotificationType.Error, () => OpenSettingsView()));
                 return null;
@@ -350,13 +349,13 @@ namespace JastUsaLibrary
 
             var cache = Serialization.FromJsonFile<List<JastProduct>>(userGamesCachePath);
             var gameVariant = cache.FirstOrDefault(x => x.ProductVariant.GameId.ToString() == game.GameId);
-            if (gameVariant == null)
+            if (gameVariant is null)
             {
                 return null;
             }
 
-            var gameTranslations = gameVariant.ProductVariant.Game.Translations.Where(x => x.Key == "en_US");
-            if (gameTranslations.Count() == 0)
+            var gameTranslations = gameVariant.ProductVariant.Game.Translations.Where(x => x.Key == Locale.En_Us);
+            if (!gameTranslations.HasItems())
             {
                 return null;
             }
@@ -367,7 +366,7 @@ namespace JastUsaLibrary
         private void OpenGameDownloadsWindow(Game game)
         {
             var gameTranslations = GetGameTranslations(game);
-            if (gameTranslations == null)
+            if (gameTranslations is null)
             {
                 return;
             }
