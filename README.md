@@ -1,4 +1,4 @@
-# Playnite Extensions Collection [![Crowdin](https://badges.crowdin.net/darklinkpower-playnite-extensi/localized.svg)](https://crowdin.com/project/darklinkpower-playnite-extensi)
+# Playnite Extensions Collection (Excerpt) [![Crowdin](https://badges.crowdin.net/darklinkpower-playnite-extensi/localized.svg)](https://crowdin.com/project/darklinkpower-playnite-extensi)
 
 Excerpt of the collection of extensions for [Playnite](https://github.com/JosefNemec/Playnite/ "Playnite - An open source video game library manager and launcher") with various purposes.
 
@@ -10,7 +10,7 @@ If you like any of these Playnite extensions consider supporting the main develo
 
 ## Questions, suggestions and Issues
 
-Questions and everything else that does not necessarily need attention of the main developer is preferably brought up in [Playnite's Discord](https://discord.gg/BrtABqe) server in the [#extensions-support](https://discord.com/channels/365863063296933888/808419165311467630) channel.
+Questions and everything else that does not necessarily need attention of the main developer is preferably brought up on [Playnite's Discord](https://discord.gg/BrtABqe) server in the [#extensions-support](https://discord.com/channels/365863063296933888/808419165311467630) channel.
 
 Suggestions like feature requests and bugs should be reported as [Issue(s)](https://github.com/darklinkpower/PlayniteExtensionsCollection/issues) on the original repository. Please check for existing issues with the same purpose to not create duplicates.
 
