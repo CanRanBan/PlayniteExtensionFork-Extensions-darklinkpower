@@ -1,0 +1,17 @@
+﻿AddonId: PlayState
+Type: Generic
+Name: PlayState
+Author: darklinkpower
+ShortDescription: This extension will let you suspend and resume your game at any moment with the configured hotkey.
+InstallerManifestUrl: https://raw.githubusercontent.com/darklinkpower/PlayniteExtensionsCollection/master/manifests/Generic_PlayState.yaml
+SourceUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection
+Description: This extension will let you suspend and resume your game at any moment with the configured hotkey. This gives a the benefit of pausing your game at any time and also to free your CPU and GPU usage when you are not playing, effectively acting as if you closed the game when you activate the script. See the screenshots for comparison.
+Tags: ["Generic"]
+Links:
+    GitHub: https://github.com/darklinkpower/PlayniteExtensionsCollection
+    Help and Troubleshooting: https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/PlayState
+    Issues Tracker: https://github.com/darklinkpower/PlayniteExtensionsCollection/issues?q=is%3Aopen+is%3Aissue+label%3APlayState
+    Support (Discord): https://discord.com/channels/365863063296933888/808419165311467630
+    Translate: https://crowdin.com/project/darklinkpower-playnite-extensi
+    Ko-fi (Tips and Donations): https://ko-fi.com/darklinkpower
+IconUrl: https://raw.githubusercontent.com/darklinkpower/PlayniteExtensionsCollection/master/source/Generic/PlayState/icon.png
