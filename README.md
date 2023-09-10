@@ -10,7 +10,9 @@ If you like any of these Playnite extensions consider supporting the main develo
 
 ## Questions, suggestions and Issues
 
-Questions and everything else that does not necessarily need attention of the main developer is preferably brought up on [Playnite's Discord](https://discord.gg/BrtABqe) server in the [#extensions-support](https://discord.com/channels/365863063296933888/808419165311467630) channel.
+The Wiki section (see `Help` links in the table below) contains a more detailed introduction to each extension, answers to commonly asked questions and explanations for important settings.
+
+Other questions and everything else that does not necessarily need attention of the main developer is preferably brought up on [Playnite's Discord](https://discord.gg/BrtABqe) server in the [#extensions-support](https://discord.com/channels/365863063296933888/808419165311467630) channel.
 
 Suggestions like feature requests and bugs should be reported as [Issue(s)](https://github.com/darklinkpower/PlayniteExtensionsCollection/issues) on the original repository. Please check for existing issues with the same purpose to not create duplicates.
 
