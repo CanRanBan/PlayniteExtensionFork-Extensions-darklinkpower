@@ -1,34 +1,28 @@
-[![Crowdin](https://badges.crowdin.net/darklinkpower-playnite-extensi/localized.svg)](https://crowdin.com/project/darklinkpower-playnite-extensi)
-# Playnite Extensions Collection
+# Playnite Extensions Collection [![Crowdin](https://badges.crowdin.net/darklinkpower-playnite-extensi/localized.svg)](https://crowdin.com/project/darklinkpower-playnite-extensi)
 
-Collection of extensions made for [Playnite](https://github.com/JosefNemec/Playnite).
+Collection of extensions for [Playnite](https://github.com/JosefNemec/Playnite/ "Playnite - An open source video game library manager and launcher") with various purposes.
 
-## Tips and donations
-All the work I do for Playnite extensions is and will always be free!
-
-I make extensions and themes to learn, have fun and to give to the community so donations are not required or requested. If you find the work being done useful and you are and in a position that allows it, you can consider making a tip to support the different Playnite related projects I work on, every little bit helps.
-
-<a href='https://ko-fi.com/darklinkpower' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+If you like any of these Playnite extensions consider supporting the main developers of the collection and Playnite:
+| Project | Main Developer | Platform | Sponsorship Link |
+| ---- | ---- | :----: | ---- |
+| [Playnite Extensions Collection](https://github.com/darklinkpower/PlayniteExtensionsCollection) | [darklinkpower](https://github.com/darklinkpower) | <img src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/ko_fi.svg" alt="Ko-fi icon" width="32" height="32" /> | [ko-fi.com/darklinkpower](https://ko-fi.com/darklinkpower) |
+| [Playnite](https://github.com/JosefNemec/Playnite/) | [Josef Nemec](https://github.com/JosefNemec) | <img src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg" alt="Patreon icon" width="32" height="32" /> | [patreon.com/playnite](https://patreon.com/playnite) |
 
 ## Questions, suggestions and Issues
 
-Please open a [new Issue](https://github.com/darklinkpower/PlayniteScriptExtensions/issues) to report issues or request features.
+Questions and everything else that does not necessarily need attention of the main developer is preferably brought up in [Playnite's Discord](https://discord.gg/BrtABqe) server in the [#extensions-support](https://discord.com/channels/365863063296933888/808419165311467630) channel.
 
-Please also be aware that I don't visit the Playnite forums frequently so if you need help or have a question, I'm more easily found in the [Playnite Discord server](https://discord.gg/BrtABqe "Playnite Discord server")
+Suggestions like feature requests and bugs should be reported as [Issue(s)](https://github.com/darklinkpower/PlayniteExtensionsCollection/issues) on the original repository. Please check for existing issues with the same purpose to not create duplicates.
 
 ## Translations
 
-You can help to translate the extensions do different languages via the project [Crowdin page.](https://crowdin.com/project/darklinkpower-playnite-extensi)
+If you want to help improve the translations of any of these Playnite extensions use the project's [Crowdin](https://crowdin.com/project/darklinkpower-playnite-extensi) page.
 
 ## Download and installation
 
-Option A. Click the `Database` link of the extension in the table to go to the addon entry in the Playnite database and then click the `Download` button in the entry.
+- Option A: Use the `Database` link in the table below to visit the corresponding entry in [Playnite's Add-on database](https://playnite.link/addons.html) and `Download` it with the button on the right side of said entry.
 
-Option B. Download directly from Playnite in the addons browser.
-
-## Usage
-
-Varies depending the extension functionality but in general. Refer to each extension thread in Playnite forums for the specific instructions.
+- Option B: Use the `Browse` section of the `Add-ons` window (default keyboard button to open it is `F9`) inside Playnite as an alternative choice to access the Add-on database.
 
 ## Extensions
 
