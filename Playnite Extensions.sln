@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginsCommon", "source\Common\PluginsCommon\PluginsCommon.csproj", "{CBED3B97-8FB8-4CA4-8827-13065AB64113}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginsCommon", "Source\Common\PluginsCommon\PluginsCommon.csproj", "{CBED3B97-8FB8-4CA4-8827-13065AB64113}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generic", "source\Generic", "{0B392A79-5131-438C-BDB2-AEF170C06F60}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generic", "Generic", "{0B392A79-5131-438C-BDB2-AEF170C06F60}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "source\Common", "{82DA706F-BCA9-4D05-912F-E23A589A66C8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{82DA706F-BCA9-4D05-912F-E23A589A66C8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "source\Library", "{4168396D-8C15-4892-A09B-95E94B24B510}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{4168396D-8C15-4892-A09B-95E94B24B510}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayState", "source\Generic\PlayState\PlayState.csproj", "{F3021AE3-EF99-480A-8CFE-A97672A36985}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Play State", "Source\Generic\PlayState\Play State.csproj", "{F3021AE3-EF99-480A-8CFE-A97672A36985}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayniteUtilitiesCommon", "source\Common\PlayniteUtilitiesCommon\PlayniteUtilitiesCommon.csproj", "{F234D215-E78A-4C84-827D-F6EF09A86D9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayniteUtilitiesCommon", "Source\Common\PlayniteUtilitiesCommon\PlayniteUtilitiesCommon.csproj", "{F234D215-E78A-4C84-827D-F6EF09A86D9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JastUsaLibrary", "source\Library\JastUsaLibrary\JastUsaLibrary.csproj", "{DB33EC10-055B-4644-97CE-B2D983A9B1DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAST USA Library", "Source\Library\JastUsaLibrary\JAST USA Library.csproj", "{DB33EC10-055B-4644-97CE-B2D983A9B1DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCommon", "source\Common\WebCommon\WebCommon.csproj", "{871CD6E7-1343-4FFB-9D28-CC09E5639E38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCommon", "Source\Common\WebCommon\WebCommon.csproj", "{871CD6E7-1343-4FFB-9D28-CC09E5639E38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
