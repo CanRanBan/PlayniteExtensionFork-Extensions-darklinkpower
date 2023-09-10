@@ -30,10 +30,10 @@ If you want to help improve the translations of any of these Playnite extensions
 
 | Icon | Name | Description | Database | Help |
 | ---- | ---- | ---- | :----: | :----: |
-| <img src="source/Generic/PlayState/icon.png" alt="Play State icon" width="32" height="32" /> | Play State | Allows to suspend and resume games (process or playtime tracking only) at any moment either automatically or with the press of a configured key or controller combination. | [Database](https://playnite.link/addons.html#PlayState) | [Help](https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/PlayState) |
+| <img src="Source/Generic/Play State/icon.png" alt="Play State icon" width="32" height="32" /> | Play State | Allows to suspend and resume games (process or playtime tracking only) at any moment either automatically or with the press of a configured key or controller combination. | [Database](https://playnite.link/addons.html#PlayState) | [Help](https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/PlayState) |
 
 ### Library
 
 | Icon | Name | Description | Database | Help |
 | ---- | ---- | ---- | :----: | :----: |
-| <img src="source/Library/JastUsaLibrary/icon.png" alt="JAST USA Library icon" width="32" height="32" /> | JAST USA Library | Allows to import and download owned games of a JAST USA store account. | [Database](https://playnite.link/addons.html#JastUsaLibrary_d407a620-5953-4ca4-a25c-8194c8559381) | [Help](https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/JAST-USA-Library) |
+| <img src="Source/Library/JAST USA Library/icon.png" alt="JAST USA Library icon" width="32" height="32" /> | JAST USA Library | Allows to import and download owned games of a JAST USA store account. | [Database](https://playnite.link/addons.html#JastUsaLibrary_d407a620-5953-4ca4-a25c-8194c8559381) | [Help](https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/JAST-USA-Library) |
