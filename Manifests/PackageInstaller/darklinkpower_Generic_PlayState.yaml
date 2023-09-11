@@ -1,4 +1,4 @@
-AddonId: PlayState
+AddonId: darklinkpower_Generic_PlayState
 Packages:
   - Version: 2.0
     RequiredApiVersion: 6.0.0

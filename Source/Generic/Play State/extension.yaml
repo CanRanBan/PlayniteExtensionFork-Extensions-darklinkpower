@@ -1,7 +1,7 @@
-Id: PlayState
+Id: darklinkpower_Generic_PlayState
 Name: Play State
 Author: darklinkpower
-Version: 2.65
+Version: 2.65.1
 Module: PlayState.dll
 Type: GenericPlugin
 Icon: icon.png
