@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
-using System.Text.RegularExpressions;
 using System.Windows;
 using WebCommon;
 
@@ -292,7 +291,7 @@ namespace JastUsaLibrary.ViewModels
             }
         }
 
-        // Returns the human-readable file size for an arbitrary, 64-bit file size 
+        // Returns the human-readable file size for an arbitrary, 64-bit file size
         // The default format is "0.### XB", e.g. "4.2 KB" or "1.434 GB"
         // From https://stackoverflow.com/a/11124118
         private string GetBytesReadable(long i)

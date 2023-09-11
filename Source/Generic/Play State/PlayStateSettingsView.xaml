@@ -1,33 +1,31 @@
-﻿<UserControl x:Class="PlayState.PlayStateSettingsView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:controls="clr-namespace:PlayState.Controls"
-             xmlns:con="clr-namespace:PlayState.Converters"
-             xmlns:enums="clr-namespace:PlayState.Enums;assembly=PlayState"
-             xmlns:pcmd="clr-namespace:PluginsCommon.Commands"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
-             mc:Ignorable="d"
-             d:DesignWidth="600" d:DesignHeight="700">
-
+﻿<UserControl
+    x:Class="PlayState.PlayStateSettingsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:PlayState.Controls"
+    xmlns:con="clr-namespace:PlayState.Converters"
+    xmlns:enums="clr-namespace:PlayState.Enums;assembly=PlayState"
+    xmlns:pcmd="clr-namespace:PluginsCommon.Commands"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    d:DesignWidth="600" d:DesignHeight="700"
+    >
     <UserControl.Resources>
-        <ObjectDataProvider x:Key="SuspendModes" MethodName="GetValues"
-                            ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider x:Key="SuspendModes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enums:SuspendModes"/>
+                <x:Type TypeName="enums:SuspendModes" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-        <ObjectDataProvider x:Key="NotificationStyles" MethodName="GetValues"
-                            ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider x:Key="NotificationStyles" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enums:NotificationStyles"/>
+                <x:Type TypeName="enums:NotificationStyles" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-        <ObjectDataProvider x:Key="GamePadToKeyboardHotkeyModes" MethodName="GetValues"
-                            ObjectType="{x:Type sys:Enum}">
+        <ObjectDataProvider x:Key="GamePadToKeyboardHotkeyModes" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enums:GamePadToKeyboardHotkeyModes"/>
+                <x:Type TypeName="enums:GamePadToKeyboardHotkeyModes" />
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <con:SuspendModeToStringConverter x:Key="SuspendModeToStringConverter" />
@@ -50,14 +48,15 @@
 
                     <CheckBox Content="{DynamicResource LOCPlayState_SettingShowManagerSidebarItem}"
                               IsChecked="{Binding Settings.ShowManagerSidebarItem}"
-                              Margin="0,0,0,0"/>
+                              Margin="0,0,0,0" />
 
                     <CheckBox Content="{DynamicResource LOCPlayState_SettingShowGameStateSwitchControl}"
                               ToolTip="{DynamicResource LOCPlayState_SettingShowGameStateSwitchControlTooltip}"
                               IsChecked="{Binding Settings.EnableGameStateSwitchControl}"
-                              Margin="0,10,0,0"/>
+                              Margin="0,10,0,0" />
 
                     <Separator Margin="0,10,0,0" />
+
                     <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
                         <TextBlock Text="{DynamicResource LOCPlayState_Setting_GlobalSuspendModeLabel}"
                                    ToolTip="{DynamicResource LOCPlayState_Setting_GlobalSuspendModeTooltp}"
@@ -77,10 +76,10 @@
                     <CheckBox x:Name="CbBringResumedToForeground"
                               Content="{DynamicResource LOCPlayState_SettingBringResumedToForeground}"
                               IsChecked="{Binding Settings.BringResumedToForeground}"
-                              Margin="0,10,0,0"/>
+                              Margin="0,10,0,0" />
                     <TextBlock Text="{DynamicResource LOCPlayState_SettingUseForegroundAutomaticSuspend}"
                                ToolTip="{DynamicResource LOCPlayState_SettingUseForegroundAutomaticSuspendNote}"
-                               Margin="0,10,0,0"/>
+                               Margin="0,10,0,0" />
                     <StackPanel Margin="40,0,0,0">
                         <CheckBox IsChecked="{Binding Settings.UseForegroundAutomaticSuspend}"
                                   Margin="0,10,0,0"
@@ -93,18 +92,20 @@
                     <CheckBox x:Name="CbSubstractOnSuspended" Content="{DynamicResource LOCPlayState_SettingSubstractSuspendedPlaytimeOnStoppedLabel}"
                               IsChecked="{Binding Settings.SubstractSuspendedPlaytimeOnStopped}"
                               ToolTip="{DynamicResource LOCPlayState_SettingSubstractSuspendedPlaytimeOnStoppedTooltip}"
-                              Margin="0,20,0,10"/>
+                              Margin="0,20,0,10" />
                     <StackPanel IsEnabled="{Binding ElementName=CbSubstractOnSuspended, Path=IsChecked}" Margin="40,0,0,0">
                         <CheckBox Content="{DynamicResource LOCPlayState_SettingSubstractOnlyNonLibraryGamesLabel}"
-                                  IsChecked="{Binding Settings.SubstractOnlyNonLibraryGames}" Margin="0,0,0,10"/>
+                                  IsChecked="{Binding Settings.SubstractOnlyNonLibraryGames}" Margin="0,0,0,10" />
                     </StackPanel>
 
                     <TextBlock Text="{DynamicResource LOCPlayState_SettingsOtherSectionLabel}" />
+
                     <Separator Margin="0,0,0,5" />
+
                     <CheckBox Content="{DynamicResource LOCPlayState_SettingDesktopModeSwitchOnControlConnect}"
-                                  IsChecked="{Binding Settings.SwitchToDesktopModeOnControllerStatus}" Margin="0,0,0,10"/>
+                                  IsChecked="{Binding Settings.SwitchToDesktopModeOnControllerStatus}" Margin="0,0,0,10" />
                     <CheckBox Content="{DynamicResource LOCPlayState_SettingFsModeSwitchOnControlConnect}"
-                                  IsChecked="{Binding Settings.SwitchToFullscreenModeOnControllerStatus}" Margin="0,0,0,10"/>
+                                  IsChecked="{Binding Settings.SwitchToFullscreenModeOnControllerStatus}" Margin="0,0,0,10" />
                     <CheckBox Content="{DynamicResource LOCPlayState_SettingSwitchModeOnlyIfNoGamesRunning}"
                                   IsChecked="{Binding Settings.SwitchModesOnlyIfNoRunningGames}" Margin="40,0,0,10"/>
                     <StackPanel Margin="40,0,0,10">
@@ -118,9 +119,7 @@
                                        Margin="10,0,0,0"
                                        Text="{Binding Settings.SwitchModeIgnoreCtrlStateOnStartupSeconds}" />
                         </DockPanel>
-
                     </StackPanel>
-
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
@@ -129,11 +128,11 @@
             <ScrollViewer>
                 <StackPanel Margin="0,20,0,0">
                     <DockPanel Margin="0,0,0,0" LastChildFill="True">
-                        <TextBox x:Name="TextBoxStyleProxy" Visibility="Collapsed"/>
+                        <TextBox x:Name="TextBoxStyleProxy" Visibility="Collapsed" />
                         <TextBlock Text="{DynamicResource LOCPlayState_SettingsInformationHotkeyLabel}"
                                    ToolTip="{DynamicResource LOCPlayState_SettingConfiguredInformationHotkeyTooltip}"
                                    DockPanel.Dock="Left"
-                                   VerticalAlignment="Center"/>
+                                   VerticalAlignment="Center" />
                         <controls:HotKeyBox MinWidth="200" VerticalAlignment="Center"
                                             Margin="10,0,0,0" DockPanel.Dock="Left"
                                             Style="{Binding ElementName=TextBoxStyleProxy, Path=Style}"
@@ -143,13 +142,13 @@
                     <DockPanel Margin="0,10,0,0">
                         <TextBlock Text="{DynamicResource LOCPlayState_SettingsSuspendResumeHotkeyLabel}"
                                    DockPanel.Dock="Left"
-                                   VerticalAlignment="Center"/>
+                                   VerticalAlignment="Center" />
                         <controls:HotKeyBox MinWidth="200" VerticalAlignment="Center"
                                             Margin="10,0,0,0"  DockPanel.Dock="Left"
                                             Style="{Binding ElementName=TextBoxStyleProxy, Path=Style}"
                                             Hotkey="{Binding Settings.SuspendHotKey}" />
                     </DockPanel>
-                    <TextBlock Text="{DynamicResource LOCPlayState_SettingNotes}" Margin="40,10,0,0" TextWrapping="Wrap"/>
+                    <TextBlock Text="{DynamicResource LOCPlayState_SettingNotes}" Margin="40,10,0,0" TextWrapping="Wrap" />
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
@@ -157,25 +156,27 @@
         <TabItem Header="{DynamicResource LOCPlayState_SettingsGamePadHotkeysLabel}">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="39*"/>
-                    <ColumnDefinition Width="146*"/>
+                    <ColumnDefinition Width="39*" />
+                    <ColumnDefinition Width="146*" />
                 </Grid.ColumnDefinitions>
                 <ScrollViewer Grid.ColumnSpan="2" Margin="0,0,0.4,0">
                     <StackPanel Margin="0,20,0,0">
                         <CheckBox IsChecked="{Binding Settings.GamePadHotkeysEnableAllControllers}"
                                   Content="{DynamicResource LOCPlayState_SettingsEnableAllControllersLabel}"
                                   ToolTip="{DynamicResource LOCPlayState_SettingsEnableAllControllersTooltip}" />
-                        <Separator Margin="0,10,0,10"/>
+
+                        <Separator Margin="0,10,0,10" />
+
                         <DockPanel Margin="0,10,0,0">
                             <CheckBox x:Name="GamePadInformationCb" VerticalAlignment="Center"
                                       IsChecked="{Binding Settings.GamePadInformationHotkeyEnable}"
-                                      Content="{DynamicResource LOCPlayState_SettingsInformationHotkeyLabel}"/>
+                                      Content="{DynamicResource LOCPlayState_SettingsInformationHotkeyLabel}" />
                             <DockPanel IsEnabled="{Binding ElementName=GamePadInformationCb, Path=IsChecked}"
-                                    LastChildFill="True" Margin="10,0,0,0">
+                                       LastChildFill="True" Margin="10,0,0,0">
                                 <Button DockPanel.Dock="Right" VerticalAlignment="Center"
                                         Margin="10,0,0,0"
                                         Content="{DynamicResource LOCPlayState_SettingChangeHotkeyButtonLabel}"
-                                        Command="{Binding SaveGamepadInformationHotkeyCommand}"/>
+                                        Command="{Binding SaveGamepadInformationHotkeyCommand}" />
                                 <TextBox VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
                                          IsReadOnly="True"
                                          Text="{Binding GamePadInformationHotkeyClone, Converter={StaticResource GamePadStateHotkeyToStringConverter}}" />
@@ -185,21 +186,22 @@
                         <DockPanel Margin="0,10,0,0">
                             <CheckBox x:Name="GamePadSuspendCb" VerticalAlignment="Center"
                                       IsChecked="{Binding Settings.GamePadSuspendHotkeyEnable}"
-                                      Content="{DynamicResource LOCPlayState_SettingsSuspendResumeHotkeyLabel}"/>
+                                      Content="{DynamicResource LOCPlayState_SettingsSuspendResumeHotkeyLabel}" />
                             <DockPanel IsEnabled="{Binding ElementName=GamePadSuspendCb, Path=IsChecked}"
                                        LastChildFill="True" Margin="10,0,0,0">
                                 <Button DockPanel.Dock="Right" VerticalAlignment="Center"
                                         Margin="10,0,0,0"
                                         Content="{DynamicResource LOCPlayState_SettingChangeHotkeyButtonLabel}"
-                                        Command="{Binding SaveGamepadSuspendHotkeyCommand}"/>
+                                        Command="{Binding SaveGamepadSuspendHotkeyCommand}" />
                                 <TextBox VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
                                          IsReadOnly="True"
                                          Text="{Binding GamePadSuspendHotkeyClone, Converter={StaticResource GamePadStateHotkeyToStringConverter}}" />
                             </DockPanel>
                         </DockPanel>
 
-                        <Separator Margin="0,5,0,5"/>
-                        <TextBlock Margin="0,10,0,0" Text="{DynamicResource LOCPlayState_SettingsCustomHotkeysLabel}"/>
+                        <Separator Margin="0,5,0,5" />
+
+                        <TextBlock Margin="0,10,0,0" Text="{DynamicResource LOCPlayState_SettingsCustomHotkeysLabel}" />
 
                         <ListView SelectionMode="Single" Height="200" Margin="0,10,0,0"
                                   SelectedItem="{Binding SelectedComboHotkey}"
@@ -226,7 +228,7 @@
                                             <DataTemplate>
                                                 <TextBox Text="{Binding GamePadHotKey, Converter={StaticResource GamePadStateHotkeyToStringConverter}}"
                                                          IsReadOnly="True"
-                                                         VerticalAlignment="Center"/>
+                                                         VerticalAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
@@ -236,7 +238,7 @@
                                             <DataTemplate>
                                                 <TextBox Text="{Binding KeyboardHotkey, Converter={StaticResource HotKeyToStringConverter}}"
                                                      IsReadOnly="True"
-                                                     VerticalAlignment="Center"/>
+                                                     VerticalAlignment="Center" />
                                             </DataTemplate>
                                         </GridViewColumn.CellTemplate>
                                     </GridViewColumn>
@@ -248,16 +250,16 @@
                                 HorizontalAlignment="Left"
                                 Margin="0,10,0,0"
                                 Content="{DynamicResource LOCPlayState_SettingsRemoveControllerHotkeyLabel}"
-                                Command="{Binding RemoveSelectedComboHotkeyCommand}"/>
+                                Command="{Binding RemoveSelectedComboHotkeyCommand}" />
 
                         <DockPanel Margin="0,10,0,0">
                             <TextBlock Text="{DynamicResource LOCPlayState_SettingsControllerHotkeyKeyboardInputEnterLabel}"
                                        DockPanel.Dock="Left"
-                                       VerticalAlignment="Center"/>
+                                       VerticalAlignment="Center" />
                             <Button DockPanel.Dock="Right" VerticalAlignment="Center"
                                     Margin="10,0,0,0"
                                     Content="{DynamicResource LOCPlayState_SettingsSetKeyboardInputLabel}"
-                                    Command="{Binding SetSelectedDefaultHotkeyCommand}"/>
+                                    Command="{Binding SetSelectedDefaultHotkeyCommand}" />
                             <ComboBox DockPanel.Dock="Right" Margin="10,0,0,0"
                                       MinWidth="100"
                                       VerticalAlignment="Center"
@@ -271,11 +273,11 @@
                         <DockPanel LastChildFill="True" Margin="0,10,0,0">
                             <TextBlock Text="{DynamicResource LOCPlayState_SettingsControllerHotkeyEnterLabel}"
                                        DockPanel.Dock="Left"
-                                       VerticalAlignment="Center"/>
+                                       VerticalAlignment="Center" />
                             <Button DockPanel.Dock="Right" VerticalAlignment="Center"
                                     Margin="10,0,0,0"
                                     Content="{DynamicResource LOCPlayState_SettingChangeHotkeyButtonLabel}"
-                                    Command="{Binding SaveGamepadToKeyboardHotkeyCommand}"/>
+                                    Command="{Binding SaveGamepadToKeyboardHotkeyCommand}" />
                             <TextBox VerticalAlignment="Center" TextWrapping="WrapWithOverflow"
                                      Margin="10,0,0,0"
                                      IsReadOnly="True"
@@ -299,7 +301,7 @@
                                 HorizontalAlignment="Left"
                                 Margin="0,10,0,0"
                                 Content="{DynamicResource LOCPlayState_SettingsAddControllerHotkeyLabel}"
-                                Command="{Binding AddComboHotkeyCommand}"/>
+                                Command="{Binding AddComboHotkeyCommand}" />
                     </StackPanel>
                 </ScrollViewer>
                 <Border Background="#D9000000"
@@ -310,14 +312,14 @@
                                VerticalAlignment="Center" />
                 </Border>
             </Grid>
-
         </TabItem>
+
         <TabItem Header="{DynamicResource LOCPlayState_SettingsTabHeaderGNotificationMessages}">
             <ScrollViewer>
                 <StackPanel Margin="0,20,0,0">
                     <CheckBox Content="{DynamicResource LOCPlayState_SettingEnableNotificationMessagesLabel}"
                               IsChecked="{Binding Settings.EnableNotificationMessages}"
-                              Margin="0,0,0,0"/>
+                              Margin="0,0,0,0" />
 
                     <StackPanel IsEnabled="{Binding Settings.EnableNotificationMessages}">
                         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
@@ -339,28 +341,23 @@
                                    Margin="0,10,0,0" />
 
                             <TextBlock VerticalAlignment="Center" Margin="0,10,0,0">
-                            <Hyperlink NavigateUri="https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/PlayState#window-notification-style-configuration"
-                                       Command="{x:Static pcmd:GlobalCommands.NavigateUrlCommand}"
-                                       CommandParameter="{Binding NavigateUri, RelativeSource={RelativeSource Self}}">
-                                <Run Text="{DynamicResource LOCPlayState_SettingsHelpLabel}" />
-                            </Hyperlink>
+                                <Hyperlink NavigateUri="https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/PlayState#window-notification-style-configuration"
+                                           Command="{x:Static pcmd:GlobalCommands.NavigateUrlCommand}"
+                                           CommandParameter="{Binding NavigateUri, RelativeSource={RelativeSource Self}}">
+                                    <Run Text="{DynamicResource LOCPlayState_SettingsHelpLabel}" />
+                                </Hyperlink>
                             </TextBlock>
-
                         </StackPanel>
 
                         <CheckBox Content="{DynamicResource LOCPlayState_SettingNotificationShowSessionPlaytime}"
                               IsChecked="{Binding Settings.NotificationShowSessionPlaytime}"
-                              Margin="0,10,0,0"/>
+                              Margin="0,10,0,0" />
                         <CheckBox Content="{DynamicResource LOCPlayState_SettingNotificationShowTotalPlaytime}"
                               IsChecked="{Binding Settings.NotificationShowTotalPlaytime}"
-                              Margin="0,10,0,0"/>
-
+                              Margin="0,10,0,0" />
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
-
         </TabItem>
-
     </TabControl>
-
 </UserControl>

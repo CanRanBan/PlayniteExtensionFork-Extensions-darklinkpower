@@ -574,23 +574,23 @@ namespace PlayState.Native
             ///</summary>
             F16 = 0x7F,
             ///<summary>
-            ///F17 key  
+            ///F17 key
             ///</summary>
             F17 = 0x80,
             ///<summary>
-            ///F18 key  
+            ///F18 key
             ///</summary>
             F18 = 0x81,
             ///<summary>
-            ///F19 key  
+            ///F19 key
             ///</summary>
             F19 = 0x82,
             ///<summary>
-            ///F20 key  
+            ///F20 key
             ///</summary>
             F20 = 0x83,
             ///<summary>
-            ///F21 key  
+            ///F21 key
             ///</summary>
             F21 = 0x84,
             ///<summary>
@@ -598,11 +598,11 @@ namespace PlayState.Native
             ///</summary>
             F22 = 0x85,
             ///<summary>
-            ///F23 key  
+            ///F23 key
             ///</summary>
             F23 = 0x86,
             ///<summary>
-            ///F24 key  
+            ///F24 key
             ///</summary>
             F24 = 0x87,
             ///<summary>

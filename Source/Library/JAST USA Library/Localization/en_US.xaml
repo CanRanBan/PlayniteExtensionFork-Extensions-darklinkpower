@@ -1,6 +1,8 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="LOCJast_Usa_Library_SettingsHelpLabel">Help</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_SettingsEmailLabel">Email:</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_SettingsPasswordLabel">Password:</sys:String>
@@ -39,7 +41,7 @@
 Download the file anyway?</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_JastDownloaderExtractingZip">Extracting zip file "{0}" to "{1}"…</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_JastDownloaderExtractZipError" xml:space="preserve">Error during "{0}" zip file extraction.
-    
+
 Error: {1}</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_JastDownloaderExtractZipOnDownload">Extract zips after downloading</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_JastDownloaderDeleteZipsOnExtract">Delete zips after extraction</sys:String>
@@ -52,6 +54,6 @@ Error: {0}</sys:String>
 Error: {0}</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_DialogMessageCouldNotObtainAuthTokens">Could not obtain authentication tokens</sys:String>
     <sys:String x:Key="LOCJast_Usa_Library_DialogMessageUninstallNotice" xml:space="preserve">Previously selected executable for the game has been unlinked.
-        
+
 Due to technical limitations, it's not possible for the plugin to uninstall or remove the game files by itself, so please do that manually.</sys:String>
 </ResourceDictionary>
