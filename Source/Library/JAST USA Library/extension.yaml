@@ -6,15 +6,15 @@ Module: JastUsaLibrary.dll
 Type: GameLibrary
 Icon: icon.png
 Links:
-    - Name: GitHub
-      Url: https://github.com/darklinkpower/PlayniteExtensionsCollection
-    - Name: Help and Troubleshooting
-      Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/JAST-USA-Library
-    - Name: Issues Tracker
-      Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/issues?q=is%3Aopen+is%3Aissue+label%3AJastUsaLibrary
-    - Name: Support (Discord)
-      Url: https://discord.com/channels/365863063296933888/808419165311467630
-    - Name: Translate
-      Url: https://crowdin.com/project/darklinkpower-playnite-extensi
-    - Name: Ko-fi (Tips and Donations)
-      Url: https://ko-fi.com/darklinkpower
+  - Name: GitHub (Source code)
+    Url: https://github.com/darklinkpower/PlayniteExtensionsCollection
+  - Name: Wiki (Introduction and Help)
+    Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/JAST-USA-Library
+  - Name: Playnite Discord (#extensions-support)
+    Url: https://discord.com/channels/365863063296933888/808419165311467630
+  - Name: Issues (Feature requests and Bugs)
+    Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/issues?q=is%3Aopen+is%3Aissue+label%3AJastUsaLibrary
+  - Name: Crowdin (Contribute Translations)
+    Url: https://crowdin.com/project/darklinkpower-playnite-extensi
+  - Name: Ko-fi (Tips and Donations)
+    Url: https://ko-fi.com/darklinkpower
