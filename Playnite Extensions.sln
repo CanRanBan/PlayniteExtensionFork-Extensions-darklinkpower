@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Play State", "Source\Generi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayniteUtilitiesCommon", "Source\Common\PlayniteUtilitiesCommon\PlayniteUtilitiesCommon.csproj", "{F234D215-E78A-4C84-827D-F6EF09A86D9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAST USA Library", "Source\Library\JAST USA Library\JAST USA Library.csproj", "{DB33EC10-055B-4644-97CE-B2D983A9B1DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JAST USA Library", "Source\Library\JAST USA\JAST USA Library.csproj", "{DB33EC10-055B-4644-97CE-B2D983A9B1DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCommon", "Source\Common\WebCommon\WebCommon.csproj", "{871CD6E7-1343-4FFB-9D28-CC09E5639E38}"
 EndProject
