@@ -4,7 +4,7 @@ Author: darklinkpower
 Version: 2.70.1
 Module: PlayState.dll
 Type: GenericPlugin
-Icon: icon.png
+Icon: Resources\PlayStateIcon.png
 Links:
   - Name: GitHub (Source code)
     Url: https://github.com/darklinkpower/PlayniteExtensionsCollection

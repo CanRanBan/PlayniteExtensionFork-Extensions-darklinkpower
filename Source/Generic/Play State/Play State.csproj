@@ -212,11 +212,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="icon.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
       <Version>7.1.3</Version>
     </PackageReference>
@@ -232,7 +227,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\playstateIcon.png">
+    <Content Include="Resources\PlayStateIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
