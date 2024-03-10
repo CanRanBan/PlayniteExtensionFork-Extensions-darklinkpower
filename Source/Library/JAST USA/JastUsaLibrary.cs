@@ -50,7 +50,7 @@ namespace JastUsaLibrary
                 HasSettings = true
             };
 
-            LibraryIcon = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"icon.png");
+            LibraryIcon = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources", @"JastUsaLibraryIcon.png");
         }
 
         private List<GameInstallCache> GetGameInstallCache()

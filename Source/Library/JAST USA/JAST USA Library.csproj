@@ -168,7 +168,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="icon.png">
+    <None Include="Resources\JastUsaLibraryIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

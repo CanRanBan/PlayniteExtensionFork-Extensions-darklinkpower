@@ -8,7 +8,7 @@ namespace JastUsaLibrary
     public class JastUsaLibraryClient : LibraryClient
     {
         public override bool IsInstalled => true;
-        public override string Icon => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"icon.png");
+        public override string Icon => Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources", @"JastUsaLibraryIcon.png");
 
         public override void Open()
         {
