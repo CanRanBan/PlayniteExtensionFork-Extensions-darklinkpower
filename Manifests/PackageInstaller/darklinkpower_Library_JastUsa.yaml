@@ -74,3 +74,22 @@ Packages:
     - 'Fix general features not working due to changes in JAST USA store API'
     - 'Fix not obtaining platforms when obtaining metadata after initial import'
     - 'Metadata download will now use the game original release date'
+  - Version: 1.12
+    RequiredApiVersion: 6.9.0
+    ReleaseDate: 2023-10-30
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2023.10.30_7c3e6b81/JastUsaLibrary_d407a620-5953-4ca4-a25c-8194c8559381_1_12.pext
+    Changelog:
+    - 'Fixed: Error when obtaining metadata if game is discounted'
+  - Version: 1.13
+    RequiredApiVersion: 6.9.0
+    ReleaseDate: 2023-11-11
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2023.11.11_3bf6575c/JastUsaLibrary_d407a620-5953-4ca4-a25c-8194c8559381_1_13.pext
+    Changelog:
+    - 'Changed: Updated localizations'
+    - 'Improved: Processing of internet requests'
+  - Version: 1.14
+    RequiredApiVersion: 6.9.0
+    ReleaseDate: 2024-02-04
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2024.02.04_c8608bd5/JastUsaLibrary_d407a620-5953-4ca4-a25c-8194c8559381_1_14.pext
+    Changelog:
+    - 'Changed: Updated localizations'

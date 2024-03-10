@@ -2,6 +2,7 @@
 using Playnite.SDK.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows;
@@ -139,7 +140,7 @@ namespace PlayniteUtilitiesCommon
         public static bool AddTagToGame(IPlayniteAPI PlayniteApi, Game game, Tag tag, bool updateInDatabase = true)
         {
             var itemAdded = false;
-            if (game.Tags == null)
+            if (game.Tags is null)
             {
                 game.TagIds = new List<Guid> { tag.Id };
                 itemAdded = true;
@@ -345,14 +346,20 @@ namespace PlayniteUtilitiesCommon
 
         public static bool ApplyFilterPreset(IPlayniteAPI PlayniteApi, FilterPreset filterPreset)
         {
+            var filterApplied = false;
             var currentFilterPresetSettings = PlayniteApi.MainView.GetCurrentFilterSettings();
             if (currentFilterPresetSettings != filterPreset.Settings)
             {
                 PlayniteApi.MainView.ApplyFilterPreset(filterPreset);
-                return true;
+                filterApplied = true;
             }
 
-            return false;
+            if (filterApplied && PlayniteApi.ApplicationInfo.Mode == ApplicationMode.Desktop)
+            {
+                PlayniteApi.MainView.SwitchToLibraryView();
+            }
+
+            return filterApplied;
         }
 
         public static void AddTextIcoFontResource(string key, string text)
@@ -372,6 +379,33 @@ namespace PlayniteUtilitiesCommon
                 webView.Navigate(url);
                 webView.OpenDialog();
             }
+        }
+
+        public static CultureInfo GetPlayniteMatchingLanguageCulture(CultureInfo defaultCulture = null)
+        {
+            if (defaultCulture is null)
+            {
+                defaultCulture = CultureInfo.InvariantCulture;
+            }
+
+            var settingsLanguage = API.Instance.ApplicationSettings.Language;
+            try
+            {
+                var cultureParts = settingsLanguage.Split('_');
+                if (cultureParts.Length == 2)
+                {
+                    var languageCode = cultureParts[0];
+                    var regionCode = cultureParts[1];
+
+                    return new CultureInfo($"{languageCode}-{regionCode}");
+                }
+            }
+            catch (CultureNotFoundException e)
+            {
+                logger.Error(e, $"Culture not found for language: {settingsLanguage}");
+            }
+
+            return defaultCulture;
         }
     }
 }

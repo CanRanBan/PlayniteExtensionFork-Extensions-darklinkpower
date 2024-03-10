@@ -454,3 +454,34 @@ Packages:
     PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2023.08.18_ceff63a9/PlayState_2_65.pext
     Changelog:
     - 'Updated localizations'
+  - Version: 2.66
+    RequiredApiVersion: 6.6.0
+    ReleaseDate: 2023-10-10
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2023.10.10_141fd33d/PlayState_2_66.pext
+    Changelog:
+    - 'Changed: Updated localizations'
+  - Version: 2.67
+    RequiredApiVersion: 6.6.0
+    ReleaseDate: 2023-10-30
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2023.10.30_7c3e6b81/PlayState_2_67.pext
+    Changelog:
+    - 'Improved: Gamepad inputs handling'
+  - Version: 2.68
+    RequiredApiVersion: 6.6.0
+    ReleaseDate: 2023-11-28
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2023.11.28_0f949552/PlayState_2_68.pext
+    Changelog:
+    - 'Changed: Updated localizations'
+  - Version: 2.69
+    RequiredApiVersion: 6.6.0
+    ReleaseDate: 2023-12-30
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2023.12.30_242d6d8c/PlayState_2_69.pext
+    Changelog:
+    - 'Fixed: Error on startup in new Playnite installations'
+    - 'Fixed: Error when starting emulated game that does not have an emulator profile configured'
+  - Version: 2.70
+    RequiredApiVersion: 6.6.0
+    ReleaseDate: 2024-02-04
+    PackageUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection/releases/download/2024.02.04_c8608bd5/PlayState_2_70.pext
+    Changelog:
+    - 'Changed: Updated localizations'

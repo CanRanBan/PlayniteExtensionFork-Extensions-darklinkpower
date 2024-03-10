@@ -49,6 +49,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,6 +67,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingTools.cs" />
+    <Compile Include="Converters\IEnumerableHasItemsToVisibilityConverter.cs" />
+    <Compile Include="Converters\InvertedVisibilityConverter.cs" />
     <Compile Include="Converters\NumericConverters.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="Extensions\CharExtensions.cs" />

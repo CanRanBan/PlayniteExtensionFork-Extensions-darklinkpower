@@ -45,7 +45,7 @@ namespace PlayState
 
         private void PlayStateDataCollection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            if (e.NewItems == null || e.NewItems.Count == 0)
+            if (e.NewItems is null || e.NewItems.Count == 0)
             {
                 return;
             }
@@ -250,7 +250,7 @@ namespace PlayState
 
         private void ShowSplashWindow(string gameName, string notificationMessage)
         {
-            if (currentSplashWindow == null)
+            if (currentSplashWindow is null)
             {
                 CreateSplashWindow();
             }

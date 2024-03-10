@@ -19,94 +19,6 @@ namespace PlayState
     {
         private const int HOTKEY_ID = 3754;
 
-
-        private bool IsAnyControllerConnected()
-        {
-            for (int i = 0; i <= 3; i++)
-            {
-                PlayerIndex playerIndex = (PlayerIndex)i;
-                GamePadState gamePadState = GamePad.GetState(playerIndex);
-                if (gamePadState.IsConnected)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private void CheckControllers()
-        {
-            var maxCheckIndex = Settings.Settings.GamePadHotkeysEnableAllControllers ? 3 : 0;
-            var anySignalSent = false;
-            for (int i = 0; i <= maxCheckIndex; i++)
-            {
-                PlayerIndex playerIndex = (PlayerIndex)i;
-                GamePadState gamePadState = GamePad.GetState(playerIndex);
-                if (gamePadState.IsConnected && (gamePadState.Buttons.IsAnyPressed() || gamePadState.DPad.IsAnyPressed()))
-                {
-                    if (isAnyGameRunning)
-                    {
-                        if (Settings.Settings.GamePadInformationHotkeyEnable && Settings.Settings.GamePadInformationHotkey?.IsGamePadStateEqual(gamePadState) == true)
-                        {
-                            SendInformationSignal();
-                            anySignalSent = true;
-                        }
-                        else if (Settings.Settings.GamePadSuspendHotkeyEnable && Settings.Settings.GamePadSuspendHotkey?.IsGamePadStateEqual(gamePadState) == true)
-                        {
-                            SendSuspendSignal();
-                            anySignalSent = true;
-                        }
-                        else
-                        {
-                            foreach (var comboHotkey in Settings.Settings.GamePadToHotkeyCollection)
-                            {
-                                if (comboHotkey.Mode == GamePadToKeyboardHotkeyModes.Disabled ||
-                                   (comboHotkey.Mode != GamePadToKeyboardHotkeyModes.Always &&
-                                    comboHotkey.Mode != GamePadToKeyboardHotkeyModes.OnGameRunning))
-                                {
-                                    continue;
-                                }
-
-                                if (comboHotkey.GamePadHotKey.IsGamePadStateEqual(gamePadState))
-                                {
-                                    Input.InputSender.SendHotkeyInput(comboHotkey.KeyboardHotkey);
-                                    anySignalSent = true;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                    else
-                    {
-                        foreach (var comboHotkey in Settings.Settings.GamePadToHotkeyCollection)
-                        {
-                            if (comboHotkey.Mode == GamePadToKeyboardHotkeyModes.Disabled ||
-                               (comboHotkey.Mode != GamePadToKeyboardHotkeyModes.Always &&
-                                comboHotkey.Mode != GamePadToKeyboardHotkeyModes.OnGameNotRunning))
-                            {
-                                continue;
-                            }
-
-                            if (comboHotkey.GamePadHotKey.IsGamePadStateEqual(gamePadState))
-                            {
-                                Input.InputSender.SendHotkeyInput(comboHotkey.KeyboardHotkey);
-                                anySignalSent = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            // To prevent events from firing continously if the
-            // buttons keep being pressed
-            if (anySignalSent)
-            {
-                System.Threading.Thread.Sleep(350);
-            }
-        }
-
         private bool IsWindows10Or11()
         {
             using (var key = Microsoft.Win32.Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion"))
@@ -347,7 +259,7 @@ namespace PlayState
 
         private async Task<bool> ScanGameSourceAction(Game game, GameAction sourceAction)
         {
-            if (sourceAction == null || sourceAction.Type != GameActionType.Emulator)
+            if (sourceAction is null || sourceAction.Type != GameActionType.Emulator || sourceAction.EmulatorProfileId.IsNullOrEmpty())
             {
                 return false;
             }
@@ -386,7 +298,7 @@ namespace PlayState
             }
 
             var profile = emulator?.CustomProfiles.FirstOrDefault(p => p.Id == emulatorProfileId);
-            if (profile == null)
+            if (profile is null)
             {
                 logger.Debug($"Failed to get Custom emulator profile");
                 return true;
