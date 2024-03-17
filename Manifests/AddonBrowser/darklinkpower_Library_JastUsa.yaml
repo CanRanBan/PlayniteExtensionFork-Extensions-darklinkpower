@@ -1,26 +1,16 @@
-﻿AddonId: darklinkpower_Library_JastUsa
+AddonId: darklinkpower_Library_JastUsa
 Type: GameLibrary
+IconUrl: https://raw.githubusercontent.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/main/Source/Library/JAST%20USA/Resources/JastUsaLibraryIcon.png
 Name: JAST USA Library
+ShortDescription: Imports games available on PC from JAST USA.
 Author: darklinkpower
-ShortDescription: This plugin imports and allows to download your library from from the JAST USA store.
-InstallerManifestUrl: https://raw.githubusercontent.com/darklinkpower/PlayniteExtensionsCollection/master/manifests/Library_JastUsaLibrary.yaml
-SourceUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection
-Description: This plugin imports and allows to download your library from from the JAST USA store.
-Tags: ["Generic", "Library", "JAST", "Visual Novel", "VN"]
+SourceUrl: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower
 Links:
-    GitHub: https://github.com/darklinkpower/PlayniteExtensionsCollection
-    Help and Troubleshooting: https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/JAST-USA-Library
-    Issues Tracker: https://github.com/darklinkpower/PlayniteExtensionsCollection/issues?q=is%3Aopen+is%3Aissue+label%3AJastUsaLibrary
-    Support (Discord): https://discord.com/channels/365863063296933888/808419165311467630
-    Translate: https://crowdin.com/project/darklinkpower-playnite-extensi
-    Ko-fi (Tips and Donations): https://ko-fi.com/darklinkpower
-IconUrl: https://raw.githubusercontent.com/darklinkpower/PlayniteExtensionsCollection/master/source/Library/JastUsaLibrary/icon.png
-Screenshots:
-    - Thumbnail: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/thumb_01.jpg
-      Image: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/screenshot_01.jpg
-    - Thumbnail: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/thumb_02.jpg
-      Image: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/screenshot_02.jpg
-    - Thumbnail: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/thumb_03.jpg
-      Image: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/screenshot_03.jpg
-    - Thumbnail: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/thumb_04.jpg
-      Image: https://github.com/darklinkpower/PlayniteExtensionsCollection/raw/master/screenshots/JastUsaLibrary/screenshot_04.jpg
+    GitHub (Source code): https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower
+    Wiki (Introduction and Help): https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/wiki
+    JAST USA: https://jastusa.com/
+    Playnite Discord (#extensions-support): https://discord.com/channels/365863063296933888/808419165311467630
+    Issues (Feature requests and Bugs): https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/issues
+InstallerManifestUrl: https://raw.githubusercontent.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/main/Manifests/PackageInstaller/darklinkpower_Library_JastUsa.yaml
+Description: The "JAST USA Library" Playnite extension imports games available on PC from JAST USA. Availability and game selection might differ by country.
+Tags: ["darklinkpower", "Library", "JAST", "USA"]
