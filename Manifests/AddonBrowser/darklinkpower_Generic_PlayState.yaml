@@ -1,17 +1,15 @@
-﻿AddonId: darklinkpower_Generic_PlayState
+AddonId: darklinkpower_Generic_PlayState
 Type: Generic
+IconUrl: https://raw.githubusercontent.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/main/Source/Generic/Play%20State/Resources/PlayStateIcon.png
 Name: Play State
+ShortDescription: Allows to pause play time tracking or game processes.
 Author: darklinkpower
-ShortDescription: This extension will let you suspend and resume your game at any moment with the configured hotkey.
-InstallerManifestUrl: https://raw.githubusercontent.com/darklinkpower/PlayniteExtensionsCollection/master/manifests/Generic_PlayState.yaml
-SourceUrl: https://github.com/darklinkpower/PlayniteExtensionsCollection
-Description: This extension will let you suspend and resume your game at any moment with the configured hotkey. This gives a the benefit of pausing your game at any time and also to free your CPU and GPU usage when you are not playing, effectively acting as if you closed the game when you activate the script. See the screenshots for comparison.
-Tags: ["Generic"]
+SourceUrl: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower
 Links:
-    GitHub: https://github.com/darklinkpower/PlayniteExtensionsCollection
-    Help and Troubleshooting: https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/PlayState
-    Issues Tracker: https://github.com/darklinkpower/PlayniteExtensionsCollection/issues?q=is%3Aopen+is%3Aissue+label%3APlayState
-    Support (Discord): https://discord.com/channels/365863063296933888/808419165311467630
-    Translate: https://crowdin.com/project/darklinkpower-playnite-extensi
-    Ko-fi (Tips and Donations): https://ko-fi.com/darklinkpower
-IconUrl: https://raw.githubusercontent.com/darklinkpower/PlayniteExtensionsCollection/master/source/Generic/PlayState/icon.png
+    GitHub (Source code): https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower
+    Wiki (Introduction and Help): https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/wiki
+    Playnite Discord (#extensions-support): https://discord.com/channels/365863063296933888/808419165311467630
+    Issues (Feature requests and Bugs): https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/issues
+InstallerManifestUrl: https://raw.githubusercontent.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/main/Manifests/PackageInstaller/darklinkpower_Generic_PlayState.yaml
+Description: The "Play State" Playnite extension allows to pause play time tracking or game processes. Automatic usage observing the active window or manual usage utilizing configured hot keys is possible.
+Tags: ["darklinkpower", "Play", "State", "Pause", "Time", "Tracking", "Game", "Process", "Hot", "Key"]
