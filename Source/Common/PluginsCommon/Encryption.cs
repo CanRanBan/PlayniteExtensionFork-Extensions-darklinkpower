@@ -78,12 +78,14 @@ namespace PluginsCommon
                     }
 
                     using (var cs = new CryptoStream(fsCrypt, AES.CreateDecryptor(), CryptoStreamMode.Read))
-                    using (var reader = new StreamReader(cs, encoding))
                     {
-                        var res = reader.ReadToEnd();
-                        cs.Close();
-                        fsCrypt.Close();
-                        return res;
+                        using (var reader = new StreamReader(cs, encoding))
+                        {
+                            var res = reader.ReadToEnd();
+                            cs.Close();
+                            fsCrypt.Close();
+                            return res;
+                        }
                     }
                 }
             }

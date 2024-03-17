@@ -95,33 +95,36 @@ namespace PlayState
             "wide_on.exe"
         };
 
-        public static List<ProcessItem> GetProcessesWmiQuery(bool useExclusionList, string gameInstallDir, string exactPath = null)
+        public static List<ProcessItem> GetProcessesWmiQuery(bool useExclusionList, string gameInstallDir,
+                                                             string exactPath = null)
         {
             logger.Debug($"Starting GetProcessesWmiQuery. \"{useExclusionList}\", \"{gameInstallDir}\", \"{exactPath}\"");
             using (var searcher = new ManagementObjectSearcher(wmiQueryString))
-            using (var results = searcher.Get())
             {
-                // Unfortunately due to Playnite being a 32 bits process, the GetProcess()
-                // method can't access needed values of 64 bits processes, so it's needed
-                // to correlate with data obtained from a WMI query that is exponentially slower.
-                // It needs to be done this way until #1199 is done
-                var query = from p in Process.GetProcesses()
-                            join mo in results.Cast<ManagementObject>()
-                            on p.Id equals (int)(uint)mo["ProcessId"]
-                            select new ProcessItem(p, (string)mo["ExecutablePath"]);
-
-                var gameProcesses = new List<ProcessItem>();
-                if (!exactPath.IsNullOrEmpty())
+                using (var results = searcher.Get())
                 {
-                    AddGameProcessesExactPath(exactPath, query, gameProcesses);
-                }
-                else
-                {
-                    AddGameProcessesThatStartWithPath(useExclusionList, gameInstallDir, query, gameProcesses);
-                }
+                    // Unfortunately due to Playnite being a 32 bits process, the GetProcess()
+                    // method can't access needed values of 64 bits processes, so it's needed
+                    // to correlate with data obtained from a WMI query that is exponentially slower.
+                    // It needs to be done this way until #1199 is done
+                    var query = from p in Process.GetProcesses()
+                                join mo in results.Cast<ManagementObject>()
+                                    on p.Id equals (int)(uint)mo["ProcessId"]
+                                select new ProcessItem(p, (string)mo["ExecutablePath"]);
 
-                logger.Debug($"Returning {gameProcesses.Count} items: {string.Join(", ", gameProcesses.Select(x => $"({x.ExecutablePath}|{x.Process.MainWindowHandle})"))}");
-                return gameProcesses;
+                    var gameProcesses = new List<ProcessItem>();
+                    if (!exactPath.IsNullOrEmpty())
+                    {
+                        AddGameProcessesExactPath(exactPath, query, gameProcesses);
+                    }
+                    else
+                    {
+                        AddGameProcessesThatStartWithPath(useExclusionList, gameInstallDir, query, gameProcesses);
+                    }
+
+                    logger.Debug($"Returning {gameProcesses.Count} items: {string.Join(", ", gameProcesses.Select(x => $"({x.ExecutablePath}|{x.Process.MainWindowHandle})"))}");
+                    return gameProcesses;
+                }
             }
         }
 
