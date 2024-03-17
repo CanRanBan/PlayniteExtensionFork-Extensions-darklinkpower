@@ -74,12 +74,6 @@ Spielzeit aussetzen: Die Spiele werden automatisch unterbrochen und wieder aufge
     <sys:String x:Key="LOCPlayState_SettingShowManagerSidebarItem">PlayState Manager Seitenleiste anzeigen</sys:String>
     <sys:String x:Key="LOCPlayState_SettingShowGameStateSwitchControl">PlayState Schaltfläche zum Wechseln des Spielstatus in Ansichten anzeigen</sys:String>
     <sys:String x:Key="LOCPlayState_SettingShowGameStateSwitchControlTooltip">Ermöglicht das Anhalten und Fortsetzen des aktuell ausgewählten Spiels durch Drücken einer Taste. Erfordert Unterstützung im benutzerdefinierten Thema.</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingFsModeSwitchOnControlConnect">In den Playnite Vollbildmodus wechseln, wenn ein Controller angeschlossen ist</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingDesktopModeSwitchOnControlConnect">Wechseln in den Playnite Desktop Modus, wenn kein Controller angeschlossen ist</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingSwitchModeOnlyIfNoGamesRunning">Wechseln in den Playnite Modus nur, wenn gerade keine Spiele laufen</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingSwitchModeIgnoreControllerOnStartupSeconds">Ignoriere den Status des Reglers für die Betriebsartumschaltung für einige Sekunden beim Start:</sys:String>
-    <sys:String x:Key="LOCPlayState_SwitchingToDesktopModeMessage">Wechseln in den Playnite Desktop Modus…</sys:String>
-    <sys:String x:Key="LOCPlayState_SwitchingToFullscreenModeMessage">Wechseln zum Playnite Vollbildmodus…</sys:String>
     <sys:String x:Key="LOCPlayState_Playtime">Spielzeit:</sys:String>
     <sys:String x:Key="LOCPlayState_TotalPlaytime">Gesamte Spielzeit:</sys:String>
     <sys:String x:Key="LOCPlayState_HoursMinutesPlayed">{0} Stunden {1} Minuten</sys:String>
@@ -106,31 +100,10 @@ Spielzeit aussetzen: Die Spiele werden automatisch unterbrochen und wieder aufge
 
     <sys:String x:Key="LOCPlayState_SettingsHotkeysTabHeaderLabel">Tastenkürzel</sys:String>
     <sys:String x:Key="LOCPlayState_SettingsKeyboardHotkeysLabel">Tastatur Tastenkürzel</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsGamePadHotkeysLabel">Controller Tastaturkürzel</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsEnableAllControllersLabel">Erlaube allen Controllern Tastenkürzel zu aktivieren</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsEnableAllControllersTooltip" xml:space="preserve">Wenn aktiviert, können alle Controller die Tastenkürzel aktivieren.
-
-Wenn deaktiviert, ist nur der erste Controller berechtigt, die Tastenkürzel zu aktivieren</sys:String>
     <sys:String x:Key="LOCPlayState_SettingsSuspendResumeHotkeyLabel">Unterbrechen/Fortsetzen:</sys:String>
     <sys:String x:Key="LOCPlayState_SettingsInformationHotkeyLabel">Information:</sys:String>
     <sys:String x:Key="LOCPlayState_SettingsCloseGameHotkeyLabel">Spiel schließen:</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsGamePadHotkeyUpdateCountdown">Aktualisiere GamePad Tastenkürzel in {0} Sekunden…</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsGamePadHotkeyButtonsLabel">Tasten: {0}</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsGamePadHotkeyDpadLabel">DPad: {0}</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsGamePadHotkeyTriggersLabel">Auslöser: {0}</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsDuplicateGamepadHotkeyMessage">Ein Controller Tastaturkürzel mit der gleichen Kombination existiert bereits!</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsControllerHotkeyLabel">Controller Tastaturkürzel</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsControllerHotkeyEnterLabel">Controller Tastaturkürzel:</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsModeLabel">Modus</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsModeEnterLabel">Modus:</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsAddControllerHotkeyLabel">Controller Tastaturkürzel hinzufügen</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsRemoveControllerHotkeyLabel">Controller Tastaturkürzel entfernen</sys:String>
-    <sys:String x:Key="LOCPlayState_SettingsControllerHotkeyKeyboardInputEnterLabel">Tastatur Eingabe:</sys:String>
     <sys:String x:Key="LOCPlayState_SettingsCtrlHotkeyKeyboardInputLabel">Tastatur Eingabe</sys:String>
     <sys:String x:Key="LOCPlayState_SettingsSetKeyboardInputLabel">Tastatureingabe festlegen</sys:String>
     <sys:String x:Key="LOCPlayState_NoneLabel">Nichts</sys:String>
-    <sys:String x:Key="LOCPlayState_ControllerHotkeyModeDisabledLabel">Deaktiviert</sys:String>
-    <sys:String x:Key="LOCPlayState_ControllerHotkeyModeGameRunningLabel">Spiel läuft</sys:String>
-    <sys:String x:Key="LOCPlayState_ControllerHotkeyModeGameNotRunningLabel">Spiel läuft nicht</sys:String>
-    <sys:String x:Key="LOCPlayState_ControllerHotkeyModeAlwaysLabel">Immer</sys:String>
 </ResourceDictionary>

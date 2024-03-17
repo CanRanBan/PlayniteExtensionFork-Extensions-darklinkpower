@@ -113,23 +113,17 @@
     </Compile>
     <Compile Include="Controls\HotKeyBox.cs" />
     <Compile Include="Converters\BoolToYesNoConverter.cs" />
-    <Compile Include="Converters\GamePadStateHotkeyToStringConverter.cs" />
     <Compile Include="Converters\HotKeyToStringConverter.cs" />
-    <Compile Include="Converters\GamePadToKeyboardHotkeyModesToStringConverter.cs" />
     <Compile Include="Converters\NotificationStyleToStringConverter.cs" />
     <Compile Include="Converters\SuspendModeToStringConverter.cs" />
-    <Compile Include="Enums\GamePadToKeyboardHotkeyModes.cs" />
     <Compile Include="Enums\AutomaticStateSwitchStatus.cs" />
     <Compile Include="Enums\GameStateSwitchControlState.cs" />
     <Compile Include="Enums\NotificationStyles.cs" />
     <Compile Include="Enums\NotificationTypes.cs" />
     <Compile Include="Enums\SuspendModes.cs" />
     <Compile Include="Events\OnGameStatusSwitchedArgs.cs" />
-    <Compile Include="GamePadHandler.cs" />
     <Compile Include="Input\KeyInput.cs" />
     <Compile Include="MessagesHandler.cs" />
-    <Compile Include="Models\GamePadHotkeyCombo.cs" />
-    <Compile Include="Models\GamePadStateHotkey.cs" />
     <Compile Include="Models\PlayStateData.cs" />
     <Compile Include="Models\HotKey.cs" />
     <Compile Include="Models\ProcessItem.cs" />
@@ -157,8 +151,6 @@
       <DependentUpon>SplashWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowsHelper.cs" />
-    <Compile Include="XInputDotNetPure\GamePad.cs" />
-    <Compile Include="XInputDotNetPure\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="extension.yaml">
@@ -167,13 +159,6 @@
     <None Include="Resources\playstateiconfont.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\..\..\Include\Libraries\XInputInterface.dll">
-      <Link>Include\Libraries\XInputInterface.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <TargetPath>XInputInterface.dll</TargetPath>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Localization\de_DE.xaml">

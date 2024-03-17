@@ -5,7 +5,6 @@ using PlayniteUtilitiesCommon;
 using PlayState.Enums;
 using PlayState.Models;
 using PlayState.Native;
-using PlayState.XInputDotNetPure;
 using PluginsCommon;
 using System;
 using System.Collections.Generic;

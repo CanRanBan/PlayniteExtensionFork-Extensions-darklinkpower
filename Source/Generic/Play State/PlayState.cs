@@ -32,14 +32,12 @@ namespace PlayState
         private IntPtr mainWindowHandle;
         private bool globalHotkeyRegistered = false;
         private bool _isAnyGameRunning = false;
-        private bool switchPlayniteModeStarted = false;
         public PlayStateSettingsViewModel Settings { get; set; }
 
         public override Guid Id { get; } = Guid.Parse("26375941-d460-4d32-925f-ad11e2facd8f");
 
         private readonly PlayStateManagerViewModel playStateManager;
         private readonly string playstateIconImagePath;
-        private readonly GamePadHandler _gamePadHandler;
         private readonly MessagesHandler messagesHandler;
         private readonly bool isWindows10Or11;
         private const string featureBlacklist = "[PlayState] Blacklist";
@@ -70,8 +68,6 @@ namespace PlayState
             playStateManager = new PlayStateManagerViewModel(PlayniteApi, Settings);
             messagesHandler = new MessagesHandler(PlayniteApi, Settings, playStateManager);
             playstateIconImagePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources", "playstateIcon.png");
-
-            _gamePadHandler = new GamePadHandler(this, Settings.Settings, playStateManager);
         }
 
         private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -86,59 +82,6 @@ namespace PlayState
         public bool IsAnyGameRunning()
         {
             return _isAnyGameRunning;
-        }
-
-        public void SetSwitchModesOnControlCheck()
-        {
-            Task.Run(() =>
-            {
-                var switchModeControllerTimer = new Timer(2000)
-                {
-                    AutoReset = true,
-                    Enabled = true
-                };
-
-                Task.Delay(TimeSpan.FromSeconds(Settings.Settings.SwitchModeIgnoreCtrlStateOnStartupSeconds))
-                    .GetAwaiter().GetResult();
-                switchModeControllerTimer.Elapsed += (_, __) =>
-                {
-                    SwitchModeOnControllerStatus();
-                };
-            });
-        }
-
-        private void SwitchModeOnControllerStatus()
-        {
-            if ((_isAnyGameRunning && Settings.Settings.SwitchModesOnlyIfNoRunningGames) || switchPlayniteModeStarted)
-            {
-                return;
-            }
-
-            if (PlayniteApi.ApplicationInfo.Mode == ApplicationMode.Desktop)
-            {
-                if (Settings.Settings.SwitchToFullscreenModeOnControllerStatus && _gamePadHandler.IsAnyControllerConnected())
-                {
-                    PerformModeSwitch("Playnite.FullscreenApp.exe", "LOCPlayState_SwitchingToFullscreenModeMessage");
-                }
-            }
-            else
-            {
-                if (Settings.Settings.SwitchToDesktopModeOnControllerStatus && !_gamePadHandler.IsAnyControllerConnected())
-                {
-                    PerformModeSwitch("Playnite.DesktopApp.exe", "LOCPlayState_SwitchingToDesktopModeMessage");
-                }
-            }
-        }
-
-        private void PerformModeSwitch(string modeToSwitch, string message)
-        {
-            var playniteExecutable = Path.Combine(PlayniteApi.Paths.ApplicationPath, modeToSwitch);
-            if (FileSystem.FileExists(playniteExecutable))
-            {
-                messagesHandler.ShowGenericNotification(ResourceProvider.GetString(message));
-                ProcessStarter.StartProcess(playniteExecutable);
-                switchPlayniteModeStarted = true;
-            }
         }
 
         public override Control GetGameViewControl(GetGameViewControlArgs args)
@@ -199,7 +142,6 @@ namespace PlayState
             hwndSource.AddHook(HwndHook);
             RegisterHotkey();
             Settings.Settings.PropertyChanged += Settings_PropertyChanged;
-            SetSwitchModesOnControlCheck();
         }
 
         public override void OnGameStarted(OnGameStartedEventArgs args)
