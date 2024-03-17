@@ -7,14 +7,12 @@ Type: GameLibrary
 Icon: Resources\JastUsaLibraryIcon.png
 Links:
   - Name: GitHub (Source code)
-    Url: https://github.com/darklinkpower/PlayniteExtensionsCollection
+    Url: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower
   - Name: Wiki (Introduction and Help)
-    Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/wiki/JAST-USA-Library
+    Url: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/wiki
+  - Name: JAST USA
+    Url: https://jastusa.com/
   - Name: Playnite Discord (#extensions-support)
     Url: https://discord.com/channels/365863063296933888/808419165311467630
   - Name: Issues (Feature requests and Bugs)
-    Url: https://github.com/darklinkpower/PlayniteExtensionsCollection/issues?q=is%3Aopen+is%3Aissue+label%3AJastUsaLibrary
-  - Name: Crowdin (Contribute Translations)
-    Url: https://crowdin.com/project/darklinkpower-playnite-extensi
-  - Name: Ko-fi (Tips and Donations)
-    Url: https://ko-fi.com/darklinkpower
+    Url: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/issues
