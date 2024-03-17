@@ -67,7 +67,7 @@ namespace PlayState
 
             playStateManager = new PlayStateManagerViewModel(PlayniteApi, Settings);
             messagesHandler = new MessagesHandler(PlayniteApi, Settings, playStateManager);
-            playstateIconImagePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Resources", "playstateIcon.png");
+            playstateIconImagePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Resources", @"PlayStateIcon.png");
         }
 
         private void Settings_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
