@@ -1,8 +1,8 @@
 AddonId: darklinkpower_Library_JastUsa
 Packages:
-  - Version: 1.14.1
+  - Version: 1.15.1
     RequiredApiVersion: 6.9.0
     ReleaseDate: 2024-xx-xx
-    PackageUrl: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/releases/download/Library_JastUsa_v1.14.1/darklinkpower_Library_JastUsa_v1.14.1.pext
+    PackageUrl: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/releases/download/Library_JastUsa_v1.15.1/darklinkpower_Library_JastUsa_v1.15.1.pext
     Changelog:
       - 'Unreleased'

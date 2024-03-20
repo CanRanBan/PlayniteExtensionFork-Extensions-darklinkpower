@@ -1,8 +1,8 @@
 AddonId: darklinkpower_Generic_PlayState
 Packages:
-  - Version: 2.70.1
+  - Version: 2.71.1
     RequiredApiVersion: 6.9.0
     ReleaseDate: 2024-03-17
-    PackageUrl: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/releases/download/Generic_PlayState_v2.70.1/darklinkpower_Generic_PlayState_v2.70.1.pext
+    PackageUrl: https://github.com/CanRanBan/PlayniteExtensionFork-Extensions-darklinkpower/releases/download/Generic_PlayState_v2.71.1/darklinkpower_Generic_PlayState_v2.71.1.pext
     Changelog:
       - 'Remove controller related features.'
